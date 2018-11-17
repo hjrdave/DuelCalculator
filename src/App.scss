@@ -1,5 +1,12 @@
 //Bootstrap 4 
 @import './scss/bootstrap/bootstrap.scss';
 
-//Partials
-@import './scss/_test.scss';
+//Font Awesome
+@import "./scss/font-awesome/fontawesome.scss";
+
+//Variables
+@import './scss/_variables.scss';
+
+//Typography
+@import './scss/_typography.scss';
+
