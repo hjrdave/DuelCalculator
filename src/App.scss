@@ -12,6 +12,10 @@
 
 .app-container{
     height: 100vh;
-    background-color: #252525;
+    background-color: $background;
 }
+
+//Partials
+@import './components/header/_header.scss';
+@import './components/footer/_footer.scss';
 

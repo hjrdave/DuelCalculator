@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 class Footer extends Component {
   render() {
     return (
-      <header className="row d-flex justify-content-center">
-        <div className="col-8 pt-4 d-flex justify-content-center">
-            <h3>Footer</h3>
+      <footer className="row d-flex justify-content-center ">
+        <div className="col-8 d-flex justify-content-center align-items-center">
+            <p className="p-2"><sm>Created by mediafish.io</sm></p>
         </div>
-      </header>
+      </footer>
     );
   }
 }
