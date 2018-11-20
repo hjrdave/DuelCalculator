@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <header className="row">
+      <header className="row align-self-start">
         <div className="col-4 pt-4 d-flex justify-content-start">
             <p>Duel Calculator</p>
         </div>

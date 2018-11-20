@@ -13,9 +13,11 @@
 .app-container{
     height: 100vh;
     background-color: $background;
+    color: white;
 }
 
 //Partials
 @import './components/header/_header.scss';
+@import './components/score/_score.scss';
 @import './components/footer/_footer.scss';
 
