@@ -8,7 +8,7 @@ class Header extends Component {
             <p>Duel Calculator</p>
         </div>
         <div className="col-8 pt-4 d-flex justify-content-end">
-            <p><i class="fas fa-cog"></i></p>
+            <p><i className="fas fa-cog"></i></p>
         </div>
       </header>
     );
