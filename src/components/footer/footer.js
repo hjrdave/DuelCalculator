@@ -8,6 +8,7 @@ class Footer extends Component {
             <p className="p-2"><sm>Created by mediafish.io</sm></p>
         </div>
       </footer>
+      
     );
   }
 }
