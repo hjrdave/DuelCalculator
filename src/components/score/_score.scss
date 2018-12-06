@@ -8,6 +8,15 @@
             font-size: $font-size-base + .5;
             color: #fff;
             text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;
+
+            i{
+               cursor: pointer; 
+               transition: opacity .3s;
+               &:hover{
+                   opacity: .5;
+               }
+            }
+           
         }
     }
     .scorecard{
