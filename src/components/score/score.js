@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Calculator from './calculator/calculator.js';
 
 class Score extends Component {
   constructor(props){
@@ -50,7 +51,7 @@ class Score extends Component {
       }
       if(this.state.view === "calculator"){
         return(
-          <p onClick = { this.showScoreCard }>Calculator</p>
+          <Calculator />
         );
       } 
       
