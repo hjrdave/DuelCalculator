@@ -1,0 +1,27 @@
+#calculator-container{
+    .calc-numbers{
+        div{
+            background-color: $background-dark;
+            border: 3px solid $background;
+            transition: background-color .2s;
+            &:hover{
+                background-color: lighten($background-dark, 3%);
+            }
+            p{
+                margin: 0px;
+                padding: 10px;
+                font-size: $font-size-base + .8;
+            }
+        }
+        .calc-score{
+            p{
+                margin: 0px;
+                padding: 0px;
+                font-family: $font-calc;
+                font-size: $font-size-base + 4;
+                color: #fff;
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;
+            }
+        } 
+    }
+}

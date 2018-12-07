@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Calculator from './calculator/calculator.js';
+import Players from './players/players.js';
 
 class Score extends Component {
   constructor(props){
@@ -21,37 +22,12 @@ class Score extends Component {
     
       if(this.state.view === "scorecard"){
         return (
-          <div className="row score-container pt-4 pb-4 d-flex justify-content-around">
-            <div id="PlayerOne" className="col-4 glow">
-              <div className="row">
-                <div className="col-12 playername pt-3 d-flex justify-content-between">
-                      <p className="pl-2"><i className="fas fa-plus"></i></p>
-                      <p>Player One</p>
-                      <p className="pr-2"><i onClick = { this.showCalculator } className="fas fa-minus"></i></p>
-                </div>
-                <div className="col-12 scorecard d-flex justify-content-center">
-                  <p>8000</p>
-                </div>
-              </div>
-            </div>
-            <div id="PlayerTwo" className="col-4 glow">
-              <div className="row">
-                <div className="col-12 playername pt-3 d-flex justify-content-between">
-                    <p className="pl-2"><i className="fas fa-plus"></i></p>
-                    <p>Player Two</p>
-                    <p className="pr-2"><i className="fas fa-minus"></i></p>
-                </div>
-                <div className="col-12 scorecard d-flex justify-content-center">
-                  <p>8000</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Players showCalculator = { this.showCalculator }/>
         );
       }
       if(this.state.view === "calculator"){
         return(
-          <Calculator />
+          <Calculator showScoreCard = { this.showScoreCard }/>
         );
       } 
       
