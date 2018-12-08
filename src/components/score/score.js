@@ -17,13 +17,20 @@ class Score extends Component {
       view: "scorecard"
     });
   }
+  playerAmount = () =>{
+    this.prop({
+      count: 2
+    })
+  }
 
   render() {
     
       if(this.state.view === "scorecard"){
-        return (
-          <Players showCalculator = { this.showCalculator }/>
-        );
+          return (
+            <div className="row players-container pt-4 pb-4 d-flex justify-content-around">
+               <Players showCalculator = { this.showCalculator } playerAmount = {this.playerAmount}/>
+            </div>
+          );
       }
       if(this.state.view === "calculator"){
         return(
