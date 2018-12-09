@@ -4,6 +4,7 @@
             background-color: $background-dark;
             border: 3px solid $background;
             transition: background-color .2s;
+            cursor: pointer;
             &:hover{
                 background-color: lighten($background-dark, 3%);
             }
@@ -11,6 +12,13 @@
                 margin: 0px;
                 padding: 10px;
                 font-size: $font-size-base + .8;
+            }
+        }
+        .calc-close{
+            p{
+                margin: 0px;
+                padding: 10px;
+                font-size: $font-size-base + 2;
             }
         }
         .calc-score{

@@ -5,7 +5,10 @@ import React, { Component } from 'react';
 class Players extends Component {
   constructor(props){
     super(props);
-    this.players = { amount: 2 };
+    this.players = { 
+      amount: 2,
+      name: "player"
+     };
   }
 
   createPlayers = () => {
@@ -16,11 +19,11 @@ class Players extends Component {
           <div className="row">
             <div className="col-12 playername pt-3 d-flex justify-content-between">
                   <p className="pl-2"><i onClick = { this.props.showCalculator } className="fas fa-plus"></i></p>
-                  <p>Player One</p>
+                  <p>{this.players.name}</p>
                   <p className="pr-2"><i onClick = { this.props.showCalculator } className="fas fa-minus"></i></p>
             </div>
             <div className="col-12 playercard d-flex justify-content-center">
-              <p>8000</p>
+              <p>{this.props.lifepoints}</p>
             </div>
           </div>
         </div>

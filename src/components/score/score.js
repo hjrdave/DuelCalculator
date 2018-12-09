@@ -6,6 +6,7 @@ class Score extends Component {
   constructor(props){
     super(props);
     this.state = { view: "scorecard" };
+    this.lifepoints = { points: 8000};
   }
   showCalculator = () => {
     this.setState({
@@ -28,13 +29,20 @@ class Score extends Component {
       if(this.state.view === "scorecard"){
           return (
             <div className="row players-container pt-4 pb-4 d-flex justify-content-around">
-               <Players showCalculator = { this.showCalculator } playerAmount = {this.playerAmount}/>
+               <Players 
+                showCalculator = { this.showCalculator } 
+                playerAmount = { this.playerAmount }
+                lifepoints = { this.lifepoints.points }
+               />
             </div>
           );
       }
       if(this.state.view === "calculator"){
         return(
-          <Calculator showScoreCard = { this.showScoreCard }/>
+          <Calculator 
+            showScoreCard = { this.showScoreCard }
+            lifepoints = { this.lifepoints.points }
+          />
         );
       } 
       
