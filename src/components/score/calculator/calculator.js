@@ -20,6 +20,14 @@ class Calculator extends Component {
     this.state.inputs.splice(0,this.state.inputs.length);
     this.setState({inputs: [...this.state.inputs]});
   }
+
+  calc = (value) => {
+    let current = this.props.lifepoints;
+    let inputed = parseInt(this.state.inputs.join(""));
+    let mathType = value;
+    let newScore = (mathType === "+") ? current + inputed : current - inputed;
+    this.props.playerScore(newScore);
+  }
   
  
 
@@ -34,7 +42,7 @@ class Calculator extends Component {
             <div className="col-8 d-flex justify-content-center">
               <div className="calc-numbers row d-flex justify-content-center">
                   <div className="calc-score col-12 pl-4 d-flex justify-content-start align-items-center">
-                  <p>{this.props.lifepoints} - {this.state.inputs}</p>
+                  <p>{this.props.lifepoints} {this.props.mathType} {this.state.inputs}</p>
                   </div>
                   <div data-input-value="1"  onClick={ () => this.userInputs('1') } className="col-3 p-3 d-flex justify-content-center align-items-center">
                     <p>1</p>
@@ -82,7 +90,7 @@ class Calculator extends Component {
                   <div onClick={() => this.clear()} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Clear</p>
                   </div>
-                  <div className="col-12 p-3 d-flex justify-content-center align-items-center">
+                  <div onClick={() => {this.calc(this.props.mathType); this.props.showScoreCard()}} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Enter</p>
                   </div>
               </div>

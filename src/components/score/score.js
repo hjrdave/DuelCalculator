@@ -5,8 +5,12 @@ import Players from './players/players.js';
 class Score extends Component {
   constructor(props){
     super(props);
-    this.state = { view: "scorecard" };
-    this.lifepoints = { points: 8000};
+    this.state = { 
+      view: "scorecard",
+      points: 8000,
+      mathType: ""
+    };
+    //this.lifepoints = { points: 8000};
   }
   showCalculator = () => {
     this.setState({
@@ -23,6 +27,16 @@ class Score extends Component {
       count: 2
     })
   }
+  playerScore = (value) =>{
+    this.setState({
+        points: value
+      })
+  }
+  calcType = (value) =>{
+    this.setState({
+      mathType: value
+    })
+  }
 
   render() {
     
@@ -32,7 +46,8 @@ class Score extends Component {
                <Players 
                 showCalculator = { this.showCalculator } 
                 playerAmount = { this.playerAmount }
-                lifepoints = { this.lifepoints.points }
+               lifepoints = { this.state.points }
+               calcType = {this.calcType}
                />
             </div>
           );
@@ -41,7 +56,11 @@ class Score extends Component {
         return(
           <Calculator 
             showScoreCard = { this.showScoreCard }
-            lifepoints = { this.lifepoints.points }
+            showCalculator = { this.showCalculator } 
+            lifepoints = { this.state.points }
+            playerScore = { this.playerScore }
+            mathType = { this.state.mathType }
+            calcType = {this.calcType}
           />
         );
       } 
