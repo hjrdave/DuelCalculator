@@ -1,3 +1,5 @@
+A Yugioh Duel Calculator I am creating with React.js. You can check it out here. https://duelcalculator.herokuapp.com/  
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
