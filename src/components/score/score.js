@@ -40,7 +40,8 @@ class Score extends Component {
   
   calc = (value, i, inputs) => {
     let current = this.state.lifepoints[i];
-    let inputed = parseInt(inputs.join(""));
+    let inputed = (parseInt(inputs.join(""))) ? parseInt(inputs.join("")) : 0;
+    //let inputed = 0;
     let mathType = value;
     let newScore = (mathType === "+") ? current + inputed : current - inputed;
     //alert(newScore);
@@ -83,7 +84,9 @@ class Score extends Component {
                   handlePlayerNumber = {this.handlePlayerNumber}
                   playerNumber = {this.state.playerNumber}
                 />
+              
             </div>
+            
           );
       }
       if(this.state.view === "calculator"){
