@@ -21,16 +21,9 @@ class Calculator extends Component {
     this.setState({inputs: [...this.state.inputs]});
   }
 
-  calc = (value, i) => {
-    let current = this.props.lifepoints[i];
-    let inputed = parseInt(this.state.inputs.join(""));
-    let mathType = value;
-    let newScore = (mathType === "+") ? current + inputed : current - inputed;
-    this.setState({
-      lifepoints: newScore
-    })
-    //this.props.playerScore(newScore);
-  }
+  
+    
+  
 
   render() {
     
@@ -41,7 +34,8 @@ class Calculator extends Component {
             <div className="col-8 d-flex justify-content-center">
               <div className="calc-numbers row d-flex justify-content-center">
                   <div className="calc-score col-12 pl-4 d-flex justify-content-start align-items-center">
-                  <p>{() => {let value = this.props.playerNumber; return this.props.lifepoints[value]}} {this.props.mathType} {this.state.inputs}</p>
+                  
+                  <p>{this.props.lifepoints[this.props.playerNumber]} {this.props.operatorType} {this.state.inputs}</p>
                   </div>
                   <div data-input-value="1"  onClick={ () => this.userInputs('1') } className="col-3 p-3 d-flex justify-content-center align-items-center">
                     <p>1</p>
@@ -89,7 +83,7 @@ class Calculator extends Component {
                   <div onClick={() => this.clear()} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Clear</p>
                   </div>
-                  <div onClick={() => {this.calc(this.props.mathType, this.props.playerNumber); this.props.showScoreCard()}} className="col-12 p-3 d-flex justify-content-center align-items-center">
+                  <div onClick={() => {this.props.calc(this.props.operatorType, this.props.playerNumber, this.state.inputs); this.props.showScoreCard()}} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Enter</p>
                   </div>
               </div>
