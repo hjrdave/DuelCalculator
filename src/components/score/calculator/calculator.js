@@ -83,14 +83,14 @@ class Calculator extends Component {
                   <div onClick={() => this.clear()} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Clear</p>
                   </div>
-                  <div onClick={() => {this.props.calc(this.props.operatorType, this.props.playerNumber, this.state.inputs); this.props.showScoreCard()}} className="col-12 p-3 d-flex justify-content-center align-items-center">
+                  <div onClick={() => {this.props.calc(this.props.operatorType, this.props.playerNumber, this.state.inputs); this.props.handleView('scorecard')}} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Enter</p>
                   </div>
               </div>
             </div>
             <div className="col-2 d-flex justify-content-center">
             <div className="calc-numbers row d-flex justify-content-center">
-              <div onClick = {this.props.showScoreCard} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
+              <div onClick = {() => this.props.handleView('scorecard')} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
                 <p><i class="fas fa-times"></i></p>
               </div>
             </div>

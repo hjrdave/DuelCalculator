@@ -15,16 +15,11 @@ class Score extends Component {
     };
   }
 
-  showCalculator = () => {
+  handleView = (value) => {
     this.setState({
-      view: "calculator"
+      view: value
     });
-  }
-
-  showScoreCard = () => {
-    this.setState({
-      view: "scorecard"
-    });
+    //alert(value);
   }
   
   handleCalcType = (value) => {
@@ -67,7 +62,7 @@ class Score extends Component {
               <div className="col-12 score players-container">
                 <div className="row d-flex justify-content-around">
                     <Players 
-                      showCalculator = { this.showCalculator } 
+                      //showCalculator = { this.showCalculator } 
                       handleCalcType = {this.handleCalcType}
                       lifepoints = {this.state.lifepoints[0]}
                       players = {this.state.players}
@@ -75,9 +70,10 @@ class Score extends Component {
                       thisPlayerNumber = {0}
                       handlePlayerNumber = {this.handlePlayerNumber}
                       playerNumber = {this.state.playerNumber}
+                      handleView = {this.handleView}
                     />
                     <Players 
-                      showCalculator = { this.showCalculator } 
+                     // showCalculator = { this.showCalculator } 
                       handleCalcType = {this.handleCalcType}
                       lifepoints = {this.state.lifepoints[1]}
                       players = {this.state.players}
@@ -85,6 +81,7 @@ class Score extends Component {
                       thisPlayerNumber = {1}
                       handlePlayerNumber = {this.handlePlayerNumber}
                       playerNumber = {this.state.playerNumber}
+                      handleView = {this.handleView}
                     />
                 </div>
               </div>
@@ -102,14 +99,15 @@ class Score extends Component {
           <div className="scoreContainer row d-flex align-items-center">
               <div className="col-12 score players-container">
                     <Calculator 
-                  showScoreCard = { this.showScoreCard }
-                  showCalculator = { this.showCalculator } 
+                  //showScoreCard = { this.showScoreCard }
+                  //showCalculator = { this.showCalculator } 
                   operatorType = { this.state.operatorType }
                   handleCalcType = {this.handleCalcType}
                   lifepoints = {this.state.lifepoints}
                   playerName = {this.state.playerName}
                   playerNumber = {this.state.playerNumber}
                   calc = {this.calc}
+                  handleView = {this.handleView}
                 />
                 </div>
                 </div>
