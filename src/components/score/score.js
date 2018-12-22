@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Calculator from './calculator/calculator.js';
 import Players from './players/players.js';
+import Utilities from '../utilities/utilities';
 
 class Score extends Component {
   constructor(props){
@@ -41,10 +42,8 @@ class Score extends Component {
   calc = (value, i, inputs) => {
     let current = this.state.lifepoints[i];
     let inputed = (parseInt(inputs.join(""))) ? parseInt(inputs.join("")) : 0;
-    //let inputed = 0;
     let mathType = value;
     let newScore = (mathType === "+") ? current + inputed : current - inputed;
-    //alert(newScore);
     if(i === 0){
       this.setState({
         lifepoints: [newScore, this.state.lifepoints[1]]
@@ -63,44 +62,54 @@ class Score extends Component {
     
       if(this.state.view === "scorecard"){
           return (
-            <div className="row players-container pt-4 pb-4 d-flex justify-content-around">
-               <Players 
-                  showCalculator = { this.showCalculator } 
-                  handleCalcType = {this.handleCalcType}
-                  lifepoints = {this.state.lifepoints[0]}
-                  players = {this.state.players}
-                  playerName = {this.state.playerName[0]}
-                  thisPlayerNumber = {0}
-                  handlePlayerNumber = {this.handlePlayerNumber}
-                  playerNumber = {this.state.playerNumber}
-                />
-                <Players 
-                  showCalculator = { this.showCalculator } 
-                  handleCalcType = {this.handleCalcType}
-                  lifepoints = {this.state.lifepoints[1]}
-                  players = {this.state.players}
-                  playerName = {this.state.playerName[1]}
-                  thisPlayerNumber = {1}
-                  handlePlayerNumber = {this.handlePlayerNumber}
-                  playerNumber = {this.state.playerNumber}
-                />
-              
+            <div className="scoreContainer row d-flex align-items-end">
+              <div className="col-12 score players-container">
+                <div className="row d-flex justify-content-around">
+                    <Players 
+                      showCalculator = { this.showCalculator } 
+                      handleCalcType = {this.handleCalcType}
+                      lifepoints = {this.state.lifepoints[0]}
+                      players = {this.state.players}
+                      playerName = {this.state.playerName[0]}
+                      thisPlayerNumber = {0}
+                      handlePlayerNumber = {this.handlePlayerNumber}
+                      playerNumber = {this.state.playerNumber}
+                    />
+                    <Players 
+                      showCalculator = { this.showCalculator } 
+                      handleCalcType = {this.handleCalcType}
+                      lifepoints = {this.state.lifepoints[1]}
+                      players = {this.state.players}
+                      playerName = {this.state.playerName[1]}
+                      thisPlayerNumber = {1}
+                      handlePlayerNumber = {this.handlePlayerNumber}
+                      playerNumber = {this.state.playerNumber}
+                    />
+                </div>
+              </div>
+              <div className="col-12 utilities-container">
+                <div className="row">
+                  <Utilities />
+                </div>
+              </div>
             </div>
             
           );
       }
       if(this.state.view === "calculator"){
         return(
-          <Calculator 
-            showScoreCard = { this.showScoreCard }
-            showCalculator = { this.showCalculator } 
-            operatorType = { this.state.operatorType }
-            handleCalcType = {this.handleCalcType}
-            lifepoints = {this.state.lifepoints}
-            playerName = {this.state.playerName}
-            playerNumber = {this.state.playerNumber}
-            calc = {this.calc}
-          />
+          <div className="scoreContainer">
+            <Calculator 
+              showScoreCard = { this.showScoreCard }
+              showCalculator = { this.showCalculator } 
+              operatorType = { this.state.operatorType }
+              handleCalcType = {this.handleCalcType}
+              lifepoints = {this.state.lifepoints}
+              playerName = {this.state.playerName}
+              playerNumber = {this.state.playerNumber}
+              calc = {this.calc}
+            />
+          </div>
         );
       } 
     }

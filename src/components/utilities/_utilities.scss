@@ -1,7 +1,11 @@
 .utilitybar{
-    position: fixed;
-    width: 100%;
-    bottom: 20px;
+  // position: fixed;
+    //width: 100vw;
+    //bottom: 20px;
+    //right: 15px;
+   // bottom: 20px;
+   //margin-top: 25px;
+   height: 100% !important;
     background-color: $background-dark;
     div{
         
