@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <header className="row align-self-start">
         <div className="col-4 pt-4 d-flex justify-content-start">
-            <p>Duel Calculator</p>
+            <p>DuelCalculator.js</p>
         </div>
         <div className="col-8 pt-4 d-flex justify-content-end">
             <p><i className="fas fa-cog"></i></p>

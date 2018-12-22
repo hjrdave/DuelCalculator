@@ -44,6 +44,7 @@ class Score extends Component {
     let inputed = (parseInt(inputs.join(""))) ? parseInt(inputs.join("")) : 0;
     let mathType = value;
     let newScore = (mathType === "+") ? current + inputed : current - inputed;
+    newScore = (newScore >= 0) ? newScore : 0;
     if(i === 0){
       this.setState({
         lifepoints: [newScore, this.state.lifepoints[1]]
