@@ -3,11 +3,11 @@ import Calculator from './calculator/calculator.js';
 import Players from './players/players.js';
 import Utilities from './utilities/utilities.js';
 
-class Score extends Component {
+class Duelboard extends Component {
   constructor(props){
     super(props);
     this.state = { 
-      view: "scorecard",
+      view: "mainboard",
       playerName: ["player 1","player 2"],
       lifepoints: [8000,8000],
       operatorType: "",
@@ -15,24 +15,28 @@ class Score extends Component {
     };
   }
 
+  //handles DuelBoard's view states
   handleView = (value) => {
     this.setState({
       view: value
     });
   }
   
+  //sets the operator type for lifepoint calculator
   handleCalcType = (value) => {
     this.setState({
       operatorType: value
     })
   }
 
+  //handles the array position for players
   handlePlayerNumber = (value) => {
     this.setState({
       playerNumber: value
     })
   }
   
+  //calculates lifepoints based off of lifepoint calculator user input
   calc = (value, i, inputs) => {
     let current = this.state.lifepoints[i];
     let inputed = (parseInt(inputs.join(""))) ? parseInt(inputs.join("")) : 0;
@@ -51,14 +55,11 @@ class Score extends Component {
     }
   }
   
-  
-
   render() {
-    
-      if(this.state.view === "scorecard"){
+      if(this.state.view === "mainboard"){
           return (
-            <div className="scoreContainer row d-flex align-items-end">
-              <div className="col-12 score players-container">
+            <div id="DuelBoardContainer" className="row d-flex align-items-end">
+              <div className="col-12">
                 <div className="row d-flex justify-content-around">
                     <Players 
                       handleCalcType = {this.handleCalcType}
@@ -82,24 +83,19 @@ class Score extends Component {
                     />
                 </div>
               </div>
-              <div className="col-12 utilities-container">
-                <div className="row">
+              <div className="col-12">
                   <Utilities 
                     handleView = {this.handleView}
                   />
-                </div>
               </div>
             </div>
-            
           );
       }
       else if(this.state.view === "calculator"){
         return(
-          <div className="scoreContainer row d-flex align-items-center">
-              <div className="col-12 score players-container">
-                    <Calculator 
-                  //showScoreCard = { this.showScoreCard }
-                  //showCalculator = { this.showCalculator } 
+          <div id="DuelBoardContainer" className="row d-flex align-items-center">
+              <div className="col-12">
+                <Calculator 
                   operatorType = { this.state.operatorType }
                   handleCalcType = {this.handleCalcType}
                   lifepoints = {this.state.lifepoints}
@@ -108,25 +104,25 @@ class Score extends Component {
                   calc = {this.calc}
                   handleView = {this.handleView}
                 />
-                </div>
-                </div>
+              </div>
+            </div>
         );
       } 
       else if(this.state.view === "utilities-coin"){
         return(
-          <div className="scoreContainer row d-flex align-items-center">
+          <div id="DuelBoardContainer" className="row d-flex align-items-center">
              <Utilities 
-             name= {"cointoss"} 
-             handleView = {this.handleView}
+              name = {"cointoss"} 
+              handleView = {this.handleView}
              />
           </div>
         );
       }
       else if(this.state.view === "utilities-dice"){
         return(
-          <div className="scoreContainer row d-flex align-items-center">
+          <div id="DuelBoardContainer" className="row d-flex align-items-center">
              <Utilities 
-             name= {"dicethrow"} 
+             name = {"dicethrow"} 
              handleView = {this.handleView}
              />
           </div>
@@ -136,4 +132,4 @@ class Score extends Component {
   }
 
 
-export default Score;
+export default Duelboard;

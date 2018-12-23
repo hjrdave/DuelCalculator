@@ -15,14 +15,13 @@
     width: 100vw;
     background-color: $background;
     color: white;
-    //border: 1px solid red;
 }
 
 //Partials
 @import './components/header/_header.scss';
-@import './components/score/_score.scss';
-@import './components/score/calculator/_calculator.scss';
-@import './components/score/players/_players.scss';
-@import './components/score/utilities/_utilities.scss';
+@import './components/duelboard/_duelboard.scss';
+@import './components/duelboard/calculator/_calculator.scss';
+@import './components/duelboard/players/_players.scss';
+@import './components/duelboard/utilities/_utilities.scss';
 @import './components/footer/_footer.scss';
 
