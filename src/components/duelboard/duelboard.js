@@ -111,20 +111,24 @@ class Duelboard extends Component {
       else if(this.state.view === "utilities-coin"){
         return(
           <div id="DuelBoardContainer" className="row d-flex align-items-center">
-             <Utilities 
-              name = {"cointoss"} 
-              handleView = {this.handleView}
-             />
+            <div className="col-12">
+              <Utilities 
+                name = {"cointoss"} 
+                handleView = {this.handleView}
+              />
+            </div>
           </div>
         );
       }
       else if(this.state.view === "utilities-dice"){
         return(
           <div id="DuelBoardContainer" className="row d-flex align-items-center">
-             <Utilities 
-             name = {"dicethrow"} 
-             handleView = {this.handleView}
-             />
+            <div className="col-12">
+              <Utilities 
+              name = {"dicethrow"} 
+              handleView = {this.handleView}
+              />
+            </div>
           </div>
         );
       }  
