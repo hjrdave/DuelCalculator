@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Calculator from './calculator/calculator.js';
 import Players from './players/players.js';
-import Utilities from '../utilities/utilities';
+import Utilities from './utilities/utilities.js';
 
 class Score extends Component {
   constructor(props){
@@ -19,7 +19,6 @@ class Score extends Component {
     this.setState({
       view: value
     });
-    //alert(value);
   }
   
   handleCalcType = (value) => {
@@ -62,7 +61,6 @@ class Score extends Component {
               <div className="col-12 score players-container">
                 <div className="row d-flex justify-content-around">
                     <Players 
-                      //showCalculator = { this.showCalculator } 
                       handleCalcType = {this.handleCalcType}
                       lifepoints = {this.state.lifepoints[0]}
                       players = {this.state.players}
@@ -73,7 +71,6 @@ class Score extends Component {
                       handleView = {this.handleView}
                     />
                     <Players 
-                     // showCalculator = { this.showCalculator } 
                       handleCalcType = {this.handleCalcType}
                       lifepoints = {this.state.lifepoints[1]}
                       players = {this.state.players}
@@ -87,14 +84,16 @@ class Score extends Component {
               </div>
               <div className="col-12 utilities-container">
                 <div className="row">
-                  <Utilities />
+                  <Utilities 
+                    handleView = {this.handleView}
+                  />
                 </div>
               </div>
             </div>
             
           );
       }
-      if(this.state.view === "calculator"){
+      else if(this.state.view === "calculator"){
         return(
           <div className="scoreContainer row d-flex align-items-center">
               <div className="col-12 score players-container">
@@ -113,6 +112,26 @@ class Score extends Component {
                 </div>
         );
       } 
+      else if(this.state.view === "utilities-coin"){
+        return(
+          <div className="scoreContainer row d-flex align-items-center">
+             <Utilities 
+             name= {"cointoss"} 
+             handleView = {this.handleView}
+             />
+          </div>
+        );
+      }
+      else if(this.state.view === "utilities-dice"){
+        return(
+          <div className="scoreContainer row d-flex align-items-center">
+             <Utilities 
+             name= {"dicethrow"} 
+             handleView = {this.handleView}
+             />
+          </div>
+        );
+      }  
     }
   }
 
