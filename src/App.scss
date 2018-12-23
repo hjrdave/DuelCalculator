@@ -10,6 +10,9 @@
 //Typography
 @import './scss/_typography.scss';
 
+//User Interface
+@import './scss/_ui.scss';
+
 .app-container{
     height: 100vh;
     width: 100vw;
@@ -23,5 +26,6 @@
 @import './components/duelboard/calculator/_calculator.scss';
 @import './components/duelboard/players/_players.scss';
 @import './components/duelboard/utilities/_utilities.scss';
+@import './components/duelboard/utilities/utilitybar/_utilitybar.scss';
 @import './components/footer/_footer.scss';
 

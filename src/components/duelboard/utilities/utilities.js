@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Utilitybar from './utilitybar/utilitybar.js';
 import Cointoss from './cointoss/cointoss.js';
 
 class Utilities extends Component {
@@ -30,17 +31,9 @@ class Utilities extends Component {
     return (
       <div id="UtilitiesContainer" className="row">
         <div className="col-12">
-          <div id="UtilityBar" className="row d-flex justify-content-center align-items-center">
-            <div className="col-2 d-flex justify-content-center align-items-center p-4">
-                <button onClick={() => this.props.handleView('utilities-coin')}><p><i className="far fa-copyright"></i></p></button>
-            </div>
-            <div className="col-2 d-flex justify-content-center align-items-center p-4">
-                <button onClick={() => this.props.handleView('utilities-dice')}><p><i className="fas fa-dice-five"></i></p></button>
-            </div>
-            <div className="col-2 d-flex justify-content-center align-items-center p-4">
-                <p><i class="fas fa-calculator"></i></p>
-            </div>
-          </div>
+          <Utilitybar 
+            handleView = {this.props.handleView}
+          />
         </div>
       </div>
     );

@@ -1,32 +1,28 @@
+//Player Card Styles
 
-    .playername{
-        p{
-            font-size: $font-size-base + .5;
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;
+.playername{
+    p{
+        font-size: $font-size-base + .5;
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;
 
-            i{
-               cursor: pointer; 
-               transition: opacity .3s;
-               &:hover{
-                   opacity: .5;
-               }
+        i{
+            cursor: pointer; 
+            transition: opacity .3s;
+            &:hover{
+                opacity: .5;
             }
-           
         }
+        
     }
-    .playercard{
-        p{
-            font-size: $font-size-base + 8;
-            font-family: $font-calc;
-            color: #fff;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;
-        }
-    }
-
-.glow{
-    border: 2px solid #4d4dff;
-    border-radius: 7px;
-    outline: none;
-    box-shadow: 0 0 40px #4d4dff;
 }
+.playercard{
+    p{
+        font-size: $font-size-base + 8;
+        font-family: $font-calc;
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;
+    }
+}
+
+

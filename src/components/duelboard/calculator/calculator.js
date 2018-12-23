@@ -10,8 +10,7 @@ class Calculator extends Component {
   
   //accepts user input and adds to input array
   userInputs = (value, value2, value3) => {
-    let cleanArray = [value, value2, value3].filter(function (el) { return el != null; });;
-    //let inputArray = [...this.state.inputs, cleanArray];
+    let cleanArray = [value, value2, value3].filter(function (el) { return el != null; });
     let inputArray = this.state.inputs.concat(cleanArray);
     this.setState({
       inputs: inputArray
@@ -35,14 +34,10 @@ class Calculator extends Component {
     });
   }
 
-  
-    
-  
-
   render() {
     
     return (
-      <div id="calculator-container" className="row pt-4 pb-4 d-flex justify-content-around">
+      <div id="CalculatorContainer" className="row pt-4 pb-4 d-flex justify-content-around">
         <div className="col-8">
           <div className="row">
             <div className="col-8 d-flex justify-content-center">
