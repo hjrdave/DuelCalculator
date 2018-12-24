@@ -54,6 +54,13 @@ class Duelboard extends Component {
       })
     }
   }
+
+  //reset dualboard
+  reset = () => {
+    this.setState({
+      lifepoints: [8000, 8000]
+    })
+  }
   
   render() {
       if(this.state.view === "mainboard"){
@@ -86,6 +93,7 @@ class Duelboard extends Component {
               <div className="col-12">
                   <Utilities 
                     handleView = {this.handleView}
+                    reset = {this.reset}
                   />
               </div>
             </div>

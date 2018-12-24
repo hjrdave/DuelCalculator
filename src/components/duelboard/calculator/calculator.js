@@ -96,7 +96,7 @@ class Calculator extends Component {
                   </div>
               </div>
             </div>
-            <div className="col-2 d-flex justify-content-center">
+            <div className="col-2 d-flex justify-content-start">
             <div className="calc-numbers row d-flex justify-content-center">
               <div onClick = {() => this.props.handleView('mainboard')} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
                 <p><i class="fas fa-times"></i></p>
