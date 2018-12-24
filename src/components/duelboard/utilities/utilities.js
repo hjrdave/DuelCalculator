@@ -15,16 +15,20 @@ class Utilities extends Component {
       return(
         <div id="UtilitiesContainer" className="row d-flex align-items-center">
           <div className="col-12">
-            <Cointoss />
+            <Cointoss 
+              handleView = {this.props.handleView}
+            />
           </div>
         </div>
       )
     }
     else if(this.props.name === 'dicethrow'){
       return(
-        <div id="UtilitiesContainer" className="row">
+        <div id="UtilitiesContainer" className="row d-flex align-items-center">
           <div className="col-12">
-            <Dice />
+            <Dice 
+              handleView = {this.props.handleView}
+            />
           </div>
         </div>
       )

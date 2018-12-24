@@ -14,7 +14,7 @@ class Utilitybar extends Component {
             <div className="col-2 d-flex justify-content-center align-items-center p-4">
                 <div onClick={() => alert('not set up yet, Sorry!')}><p><i class="fas fa-redo"></i></p></div>
             </div>
-          </div>
+        </div>
       )
   }
 }
