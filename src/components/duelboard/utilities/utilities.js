@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Utilitybar from './utilitybar/utilitybar.js';
 import Cointoss from './cointoss/cointoss.js';
+import Dice from './dice/dice.js';
 
 class Utilities extends Component {
   constructor(props){
@@ -12,7 +13,7 @@ class Utilities extends Component {
   render() {
     if(this.props.name === 'cointoss'){
       return(
-        <div id="UtilitiesContainer" className="row">
+        <div id="UtilitiesContainer" className="row d-flex align-items-center">
           <div className="col-12">
             <Cointoss />
           </div>
@@ -23,7 +24,7 @@ class Utilities extends Component {
       return(
         <div id="UtilitiesContainer" className="row">
           <div className="col-12">
-            <p>dice</p>
+            <Dice />
           </div>
         </div>
       )
