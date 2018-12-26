@@ -12,7 +12,7 @@ class Utilitybar extends Component {
                 <div onClick={() => this.props.handleView('utilities-dice')}><p><i className="fas fa-dice-five"></i></p></div>
             </div>
             <div className="col-2 d-flex justify-content-center align-items-center p-4">
-                <div onClick={() => this.props.reset()}><p><i class="fas fa-redo"></i></p></div>
+                <div onClick={() => this.props.handleView('utilities-reset')}><p><i class="fas fa-redo"></i></p></div>
             </div>
         </div>
       )

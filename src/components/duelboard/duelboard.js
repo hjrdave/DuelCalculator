@@ -139,6 +139,18 @@ class Duelboard extends Component {
             </div>
           </div>
         );
+      }
+      else if(this.state.view === "utilities-reset"){
+        return(
+          <div id="DuelBoardContainer" className="row d-flex align-items-center">
+            <div className="col-12">
+              <Utilities 
+              name = {"reset"} 
+              handleView = {this.handleView}
+              />
+            </div>
+          </div>
+        );
       }  
     }
   }

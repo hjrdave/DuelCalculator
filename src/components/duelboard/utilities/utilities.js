@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Utilitybar from './utilitybar/utilitybar.js';
 import Cointoss from './cointoss/cointoss.js';
 import Dice from './dice/dice.js';
+import Reset from './reset/reset.js';
 
 class Utilities extends Component {
   constructor(props){
@@ -33,16 +34,29 @@ class Utilities extends Component {
         </div>
       )
     }
-    return (
-      <div id="UtilitiesContainer" className="row">
-        <div className="col-12">
-          <Utilitybar 
-            handleView = {this.props.handleView}
-            reset = {this.props.reset}
-          />
+    else if(this.props.name === 'reset'){
+      return (
+        <div id="UtilitiesContainer" className="row">
+          <div className="col-12">
+            <Reset
+              handleView = {this.props.handleView}
+            />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+    
+      return (
+        <div id="UtilitiesContainer" className="row">
+          <div className="col-12">
+            <Utilitybar 
+              handleView = {this.props.handleView}
+            />
+          </div>
+        </div>
+      );
+    
+    
   }
 }
 
