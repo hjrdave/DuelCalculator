@@ -34,11 +34,14 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="row align-self-start">
-        <div className="col-4 pt-4 d-flex justify-content-start">
-            <p>DuelCalculator.js</p>
+      <header className="row d-flex justify-content-between align-self-start">
+        <div className="col-2 pt-4 d-flex justify-content-start">
+            <p><i onClick={() => alert('sorry, settings are not set up yet')} class="fas fa-cog"></i></p>
         </div>
-        <div className="col-8 pt-4 d-flex justify-content-end">
+        <div className="col-3 pt-4 d-flex justify-content-center">
+            <h4>DuelCalculator.js</h4>
+        </div>
+        <div className="col-2 pt-4 d-flex justify-content-end">
             <p><i onClick={() => this.ToggleFullscreen() } class="fas fa-expand"></i></p>
         </div>
       </header>
