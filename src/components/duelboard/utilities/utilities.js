@@ -40,6 +40,7 @@ class Utilities extends Component {
           <div className="col-12">
             <Reset
               handleView = {this.props.handleView}
+              reset = {this.props.reset}
             />
           </div>
         </div>

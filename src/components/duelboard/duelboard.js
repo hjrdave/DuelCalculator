@@ -147,6 +147,7 @@ class Duelboard extends Component {
               <Utilities 
               name = {"reset"} 
               handleView = {this.handleView}
+              reset = {this.reset}
               />
             </div>
           </div>
