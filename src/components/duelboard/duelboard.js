@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Velocity from 'velocity-animate';
 import Calculator from './calculator/calculator.js';
 import Players from './players/players.js';
 import Utilities from './utilities/utilities.js';
+
 
 class Duelboard extends Component {
   constructor(props){
@@ -66,12 +68,14 @@ class Duelboard extends Component {
     })
   }
 
-
+  componentDidMount(){
+    Velocity(document.getElementById('DuelBoardContainer'),{ opacity: [1,0], scale: [1, 1.5]},500);
+  }
   
   render() {
       if(this.state.view === "mainboard"){
           return (
-            <div id="DuelBoardContainer" className="row d-flex align-items-end">
+            <div id="DuelBoardContainer" refs="block" className="row d-flex align-items-end">
               <div className="col-12">
                 <div className="row d-flex justify-content-around">
                     <Players 
