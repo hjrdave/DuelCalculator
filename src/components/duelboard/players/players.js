@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import CountUp from 'react-countup';
 
 
 
 class Players extends Component {
-  
+ 
   
   render() {
       return (
@@ -19,7 +20,16 @@ class Players extends Component {
                   </p>
             </div>
             <div className="playercard col-12 d-flex justify-content-center">
-              <p>{this.props.lifepoints}</p>
+              {/* <p>{this.props.lifepoints}</p> */}
+              <p>
+                <CountUp 
+                  start={this.props.lifepointsPrev}
+                  end={this.props.lifepoints}
+                  delay={.4}
+                  duration={.75}
+                  useEasing ={true}
+                />
+              </p>
             </div>
           </div>
       </div>

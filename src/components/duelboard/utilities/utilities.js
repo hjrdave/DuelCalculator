@@ -41,6 +41,7 @@ class Utilities extends Component {
             <Reset
               handleView = {this.props.handleView}
               reset = {this.props.reset}
+              lifepointsPrev = {this.props.lifepointsPrev}
             />
           </div>
         </div>

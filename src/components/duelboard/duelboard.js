@@ -10,6 +10,7 @@ class Duelboard extends Component {
       view: "mainboard",
       playerName: ["player 1","player 2"],
       lifepoints: [8000,8000],
+      lifepointsPrev: [8000,8000],
       operatorType: "",
       playerNumber: 0
     };
@@ -37,6 +38,7 @@ class Duelboard extends Component {
   }
   
   //calculates lifepoints based off of lifepoint calculator user input
+  //also sets the previous lifepoint score for animation purposes
   calc = (value, i, inputs) => {
     let current = this.state.lifepoints[i];
     let inputed = (parseInt(inputs.join(""))) ? parseInt(inputs.join("")) : 0;
@@ -45,12 +47,14 @@ class Duelboard extends Component {
     newScore = (newScore >= 0) ? newScore : 0;
     if(i === 0){
       this.setState({
-        lifepoints: [newScore, this.state.lifepoints[1]]
+        lifepoints: [newScore, this.state.lifepoints[1]],
+        lifepointsPrev: [current, this.state.lifepoints[1]]
       })
     }
     else if(i === 1){
       this.setState({
-        lifepoints: [this.state.lifepoints[0], newScore]
+        lifepoints: [this.state.lifepoints[0], newScore],
+        lifepointsPrev: [this.state.lifepoints[0], current]
       })
     }
   }
@@ -61,6 +65,8 @@ class Duelboard extends Component {
       lifepoints: [8000, 8000]
     })
   }
+
+
   
   render() {
       if(this.state.view === "mainboard"){
@@ -71,6 +77,7 @@ class Duelboard extends Component {
                     <Players 
                       handleCalcType = {this.handleCalcType}
                       lifepoints = {this.state.lifepoints[0]}
+                      lifepointsPrev = {this.state.lifepointsPrev[0]}
                       players = {this.state.players}
                       playerName = {this.state.playerName[0]}
                       thisPlayerNumber = {0}
@@ -81,6 +88,7 @@ class Duelboard extends Component {
                     <Players 
                       handleCalcType = {this.handleCalcType}
                       lifepoints = {this.state.lifepoints[1]}
+                      lifepointsPrev = {this.state.lifepointsPrev[1]}
                       players = {this.state.players}
                       playerName = {this.state.playerName[1]}
                       thisPlayerNumber = {1}
@@ -148,6 +156,7 @@ class Duelboard extends Component {
               name = {"reset"} 
               handleView = {this.handleView}
               reset = {this.reset}
+              lifepointsPrev = {this.state.lifepointsPrev}
               />
             </div>
           </div>

@@ -24,7 +24,7 @@ class Reset extends Component {
             <div className="col-8 d-flex justify-content-center">
               <div className="reset-controls row d-flex justify-content-center">
                   
-                  <div onClick = {() => {this.props.reset(); this.props.handleView('mainboard')}} className="col-6 d-flex justify-content-center align-items-center">
+                  <div onClick = {() => {this.props.reset(); this.props.handleView('mainboard'); this.setState({lifepointsPrev: [8000,8000]})}} className="col-6 d-flex justify-content-center align-items-center">
                     <p>Yes</p>
                   </div>
                   
