@@ -1,6 +1,8 @@
 //Duel Calculator Styles
 
 #CalculatorContainer{
+    opacity: 0;
+    transform: scale(.9);
     .calc-numbers{
         div{
             background-color: $background-dark;

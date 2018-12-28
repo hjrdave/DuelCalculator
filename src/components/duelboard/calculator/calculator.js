@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Velocity from 'velocity-animate';
 
 class Calculator extends Component {
   constructor(props){
@@ -32,6 +33,15 @@ class Calculator extends Component {
     this.setState({
       inputs: [...this.state.inputs]
     });
+  }
+
+  mountEffect = () => {
+    //player card animation
+    Velocity(document.getElementById("CalculatorContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:400,delay:100});
+  }
+
+  componentDidMount(){
+    this.mountEffect();
   }
 
   render() {
@@ -98,7 +108,7 @@ class Calculator extends Component {
             </div>
             <div className="col-2 d-flex justify-content-start">
             <div className="calc-numbers row d-flex justify-content-center">
-              <div onClick = {() => this.props.handleView('mainboard')} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
+              <div onClick = {() => {this.props.handleView('mainboard'); }} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
                 <p><i class="fas fa-times"></i></p>
               </div>
             </div>

@@ -12,16 +12,18 @@ class Duelboard extends Component {
       view: "mainboard",
       playerName: ["player 1","player 2"],
       lifepoints: [8000,8000],
-      lifepointsPrev: [8000,8000],
+      lifepointsPrev: [0,0],
       operatorType: "",
-      playerNumber: 0
+      playerNumber: 0,
+      introAnimate: true
     };
   }
 
   //handles DuelBoard's view states
   handleView = (value) => {
     this.setState({
-      view: value
+      view: value,
+      lifepointsPrev: [this.state.lifepoints[0], this.state.lifepoints[1]]
     });
   }
   
@@ -59,6 +61,11 @@ class Duelboard extends Component {
         lifepointsPrev: [this.state.lifepoints[0], current]
       })
     }
+    else if(value === "none"){
+      this.setState({
+        lifepointsPrev: [this.state.lifepoints[0], this.state.lifepoints[1]]
+      })
+    }
   }
 
   //reset dualboard
@@ -68,10 +75,44 @@ class Duelboard extends Component {
     })
   }
 
-  componentDidMount(){
-    Velocity(document.getElementById('DuelBoardContainer'),{ opacity: [1,0], scale: [1, 1.5]},500);
+  //intro animation for app onload and app reset
+  resetEffect = () => {
+      //player card animation
+      Velocity(document.getElementsByClassName("player")[0],{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:200});
+      Velocity(document.getElementsByClassName("player")[1],{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:400});
+
+      //utility bar animation
+      Velocity(document.getElementById("UtilityBar"),{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:800});
+      //Velocity(document.getElementsByClassName("fa-copyright fa-dice-five fa-redo"),{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:800});
+  }
+  mountEffect = () => {
+    //player card animation
+    Velocity(document.getElementsByClassName("player")[0],{ opacity: [1,0], scale: [1, .9]},{duration:400,delay:100});
+    Velocity(document.getElementsByClassName("player")[1],{ opacity: [1,0], scale: [1, .9]},{duration:400,delay:100});
+
+    //utility bar animation
+    Velocity(document.getElementById("UtilityBar"),{ opacity: [1,0], scale: [1, 1]},{duration:400,delay:300});
+    
   }
   
+  componentDidMount(){
+    
+    this.resetEffect();
+    
+  }
+  componentDidUpdate(){
+    if(this.state.introAnimate === true){
+      this.resetEffect();
+      this.setState({introAnimate: false});
+    }
+    else if(this.state.introAnimate === false){
+      this.mountEffect()
+    }
+  }
+  
+
+  
+
   render() {
       if(this.state.view === "mainboard"){
           return (
