@@ -87,11 +87,11 @@ class Duelboard extends Component {
   }
   mountEffect = () => {
     //player card animation
-    Velocity(document.getElementsByClassName("player")[0],{ opacity: [1,0], scale: [1, .9]},{duration:400,delay:100});
-    Velocity(document.getElementsByClassName("player")[1],{ opacity: [1,0], scale: [1, .9]},{duration:400,delay:100});
+    Velocity(document.getElementsByClassName("player")[0],{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
+    Velocity(document.getElementsByClassName("player")[1],{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
 
     //utility bar animation
-    Velocity(document.getElementById("UtilityBar"),{ opacity: [1,0], scale: [1, 1]},{duration:400,delay:300});
+    Velocity(document.getElementById("UtilityBar"),{ opacity: [1,0], scale: [1, 1]},{duration:300,delay:300});
     
   }
   

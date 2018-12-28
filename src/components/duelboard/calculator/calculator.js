@@ -37,7 +37,7 @@ class Calculator extends Component {
 
   mountEffect = () => {
     //player card animation
-    Velocity(document.getElementById("CalculatorContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:400,delay:100});
+    Velocity(document.getElementById("CalculatorContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
   }
 
   componentDidMount(){
