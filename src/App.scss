@@ -19,6 +19,12 @@
     background-color: $background;
     color: white;
     overflow: hidden !important;
+
+    .particles{
+        position: fixed!important;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 //Partials
