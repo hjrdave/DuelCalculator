@@ -32,9 +32,9 @@ class Dice extends Component {
                setTimeout(()=>{this.setState({dice:value[1]})},time * 14);
                setTimeout(()=>{this.setState({dice:value[2]})},time * 15);
                setTimeout(()=>{this.setState({dice:value[3]})},time * 16);
-               setTimeout(()=>{this.setState({dice:value[4]})},time * 17);
-               setTimeout(()=>{this.setState({dice:value[5]})},time * 18);
-               setTimeout(()=>{this.setState({dice:value[x - 1]})},time * 19);
+            //    setTimeout(()=>{this.setState({dice:value[4]})},time * 17);
+            //    setTimeout(()=>{this.setState({dice:value[5]})},time * 18);
+               setTimeout(()=>{this.setState({dice:value[x - 1]})},time * 17);
             }
         let rollValue = Math.floor(Math.random() * 6) + 1;
         this.setState({

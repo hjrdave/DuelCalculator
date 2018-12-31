@@ -24,7 +24,7 @@ class Cointoss extends Component {
                 <div className="row">
                     <div className="col-12 d-flex justify-content-center">
                         <div className="d-flex align-items-end">
-                            <p><i className="far fa-copyright"></i></p>
+                            <div className="coin-circle d-flex justify-content-center align-items-center"><p className="d-flex justify-content-center align-items-center">HEADS</p></div>
                         </div>
                     </div>
                     <div className="mt-4 col-12 d-flex justify-content-center">

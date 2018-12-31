@@ -7,7 +7,7 @@
         div{
             p{ 
                 font-size: $font-size-base + .7;
-                text-shadow:none!important;
+                //text-shadow:none!important;
                 i{
                     font-size: 8rem;
                     text-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 10px #4d4dff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 25px #4d4dff, 0 0 55px #4d4dff;
@@ -41,5 +41,20 @@
             }
         }
         
+    }
+}
+
+.coin-circle{
+    height: 165px;
+    width: 165px;
+    border-radius: 100px;
+    background-color:none;
+    border: 10px solid white;
+    box-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 10px #4d4dff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 25px #4d4dff, 0 0 55px #4d4dff;
+    p{
+     font-size: 225%!important;
+     padding: 0px!important;
+     margin: 0px!important;
+     text-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 10px #4d4dff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 25px #4d4dff, 0 0 55px #4d4dff!important;
     }
 }
