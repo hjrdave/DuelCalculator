@@ -77,18 +77,31 @@ class Duelboard extends Component {
 
   //intro animation for app onload and app reset
   resetEffect = () => {
-      //player card animation
-      Velocity(document.getElementsByClassName("player")[0],{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:200});
-      Velocity(document.getElementsByClassName("player")[1],{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:400});
+
+
+      //particle.js animation
+      //Velocity(document.getElementsByClassName("particles"),{ opacity: [1,0], scale: [1, 4]},{duration:500,delay:600});
 
       //utility bar animation
-      Velocity(document.getElementById("UtilityBar"),{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:800});
-      //Velocity(document.getElementsByClassName("fa-copyright fa-dice-five fa-redo"),{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:800});
+      Velocity(document.getElementById("UtilityBar"),{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:700});
+
+      //player card animation
+      Velocity(document.getElementsByClassName("player")[0],{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:300});
+      Velocity(document.getElementsByClassName("player")[1],{ opacity: [1,0], scale: [1, 2]},{duration:500,delay:500});
+
+      
+
+      
+
+      
   }
   mountEffect = () => {
     //player card animation
     Velocity(document.getElementsByClassName("player")[0],{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
     Velocity(document.getElementsByClassName("player")[1],{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
+
+    //particle.js animation
+   //Velocity(document.getElementsByClassName("particles"),{ scale: [1,2]},{duration:500,delay:600});
 
     //utility bar animation
     Velocity(document.getElementById("UtilityBar"),{ opacity: [1,0], scale: [1, 1]},{duration:300,delay:300});
