@@ -19,11 +19,16 @@ class Cointoss extends Component {
         //Velocity(document.getElementsByClassName('coin-circle'),{rotateX: ['0deg','360deg']},{duration: 400});
     }
     let coinface = () => {
+        let time = 100;
         let value = ["TAILS","HEADS"];
-        setTimeout(()=>{this.setState({coinface:value[0]})},50);
-        setTimeout(()=>{this.setState({coinface:value[1]})},50 * 2);
-        setTimeout(()=>{this.setState({coinface:value[0]})},50 * 3);
-        setTimeout(()=>{this.setState({coinface:tossValue})},50 * 4);
+        setTimeout(()=>{this.setState({coinface:value[0]})},time);
+        setTimeout(()=>{this.setState({coinface:value[1]})},time * 2);
+        setTimeout(()=>{this.setState({coinface:value[0]})},time * 3);
+        setTimeout(()=>{this.setState({coinface:value[1]})},time * 4);
+        setTimeout(()=>{this.setState({coinface:value[0]})},time * 5);
+        setTimeout(()=>{this.setState({coinface:value[1]})},time * 6);
+        setTimeout(()=>{this.setState({coinface:value[0]})},time * 7);
+        setTimeout(()=>{this.setState({coinface:tossValue})},time * 8);
     }
     
     this.setState({
