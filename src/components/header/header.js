@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Header extends Component {
-
+    constructor(props){
+        super(props);
+        this.state = { 
+            sizeIcon: "fa-expand"
+        };
+    }
   ToggleFullscreen = () => {
     var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
         (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
@@ -19,6 +25,9 @@ class Header extends Component {
         } else if (docElm.msRequestFullscreen) {
             docElm.msRequestFullscreen();
         }
+        this.setState({
+            sizeIcon: "fa-compress-arrows-alt"
+        })
     } else {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -29,6 +38,9 @@ class Header extends Component {
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
+        this.setState({
+            sizeIcon: "fa-expand"
+        })
     }
 }
 
@@ -42,7 +54,7 @@ class Header extends Component {
             <h4>DuelCalculator.js</h4>
         </div>
         <div className="col-2 pt-4 d-flex justify-content-end">
-            <p><i onClick={() => this.ToggleFullscreen() } class="fas fa-expand"></i></p>
+            <p><i onClick={() => this.ToggleFullscreen() } class={"fas " + this.state.sizeIcon}></i></p>
         </div>
       </header>
     );

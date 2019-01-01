@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "i": "^0.3.6",
     "node-sass": "^4.10.0",
+    "npm": "^6.5.0",
     "react": "^16.6.3",
     "react-countup": "^4.0.0",
     "react-dom": "^16.6.3",
