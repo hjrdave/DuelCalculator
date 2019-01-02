@@ -37,7 +37,9 @@ class Cointoss extends Component {
     Velocity(document.getElementsByClassName('coin-circle-container'),{translateY: '-=150px'},{duration: 400, easing:'easeOutExpo'});
     Velocity(document.getElementsByClassName('coin-circle-container'),{translateY: '+= 150px'},{duration: 400,easing:'easeInExpo'});
   }  
-
+  componentDidMount(){
+    Velocity(document.getElementById("CointossContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
+  }
   render() {
     return (
         <div id="CointossContainer" className="row mt-4 pt-4 d-flex justify-content-center">

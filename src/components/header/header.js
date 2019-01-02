@@ -48,7 +48,7 @@ class Header extends Component {
     return (
       <header className="row d-flex justify-content-between align-self-start">
         <div className="col-2 pt-4 d-flex justify-content-start">
-            <p><i onClick={() => alert('sorry, settings are not set up yet')} class="fas fa-cog"></i></p>
+            <p><i onClick={() => {this.props.handleSettings(); }} class="fas fa-cog"></i></p>
         </div>
         <div className="col-3 pt-4 d-flex justify-content-center">
             <h4>DuelCalculator.js</h4>

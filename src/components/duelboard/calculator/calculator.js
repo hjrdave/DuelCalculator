@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Velocity from 'velocity-animate';
 
+
+
 class Calculator extends Component {
   constructor(props){
     super(props);
@@ -35,13 +37,9 @@ class Calculator extends Component {
     });
   }
 
-  mountEffect = () => {
-    //player card animation
-    Velocity(document.getElementById("CalculatorContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
-  }
-
+ //Handles UI Animations
   componentDidMount(){
-    this.mountEffect();
+    Velocity(document.getElementById("CalculatorContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
   }
 
   render() {

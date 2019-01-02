@@ -42,7 +42,9 @@ class Dice extends Component {
         Velocity(document.getElementById('dice'),{translateY: '+= 150px'},{duration: 475, easing:[500,21]});
         //Velocity(document.getElementById('dice'),{translateY: '-100px'},{duration: 475});
     }   
-    
+    componentDidMount(){
+        Velocity(document.getElementById("DiceContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
+      }
    
   render() {
     return (

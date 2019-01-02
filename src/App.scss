@@ -30,6 +30,7 @@
 }
 
 //Partials
+@import './components/settings/_settings.scss';
 @import './components/header/_header.scss';
 @import './components/duelboard/_duelboard.scss';
 @import './components/duelboard/calculator/_calculator.scss';

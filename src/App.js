@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fab } from '@fortawesome/free-brands-svg-icons';
-// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import Velocity from 'velocity-animate';
 import './App.scss';
+import Settings from './components/settings/settings.js';
 import Header from './components/header/header.js';
 import Duelboard from './components/duelboard/duelboard.js';
 import Footer from './components/footer/footer.js';
@@ -13,13 +12,49 @@ import Footer from './components/footer/footer.js';
 
 
 class App extends Component {
- 
+    constructor(props){
+        super(props);
+        this.state = { 
+            SettingsState: "Closed",
+            AnimationState: "default"
+        };
+    }
 
-
-  handleView = () => {
-
-  }
-
+    //Handles setting state and animations
+    handleSettings = () => {
+        if(this.state.SettingsState === "Closed"){
+           Velocity(
+               document.getElementById('SettingsContainer'),{
+                   translateX: ['+=30vw','-30vw']},{
+                   duration: 300, 
+                   complete: () => {
+                    this.setState({
+                        SettingsState: "Open",
+                        AnimationState: "none"
+                    })
+                   }});
+            
+        }
+        else{
+            Velocity(
+                document.getElementById('SettingsContainer'),{
+                    translateX: '-=30vw'},{
+                    duration: 300,
+                    complete:() => {
+                        this.setState({
+                            SettingsState: "Closed"
+                            //AnimationState: "default"
+                        })
+                    }});
+        }
+    }
+    
+    handleAnimationState = (value) => {
+        this.setState({
+            AnimationState: value
+        })
+    }
+  
   render() {
     return (
       <div className="container-fluid app-container">
@@ -69,8 +104,9 @@ class App extends Component {
           "retina_detect": true
       }}
         />
-        <Header />
-        <Duelboard />
+        <Settings handleSettings={this.handleSettings} AnimationState={this.state.AnimationState}/>
+        <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
+        <Duelboard handleAnimationState={this.handleAnimationState} AnimationState={this.state.AnimationState}/>
         <Footer />
       </div>
     );

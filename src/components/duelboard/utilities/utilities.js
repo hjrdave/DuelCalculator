@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Velocity from 'velocity-animate';
 import Utilitybar from './utilitybar/utilitybar.js';
 import Cointoss from './cointoss/cointoss.js';
 import Dice from './dice/dice.js';
@@ -13,14 +12,7 @@ class Utilities extends Component {
     };
   }
 
-  mountEffect = () => {
-    //player card animation
-    Velocity(document.getElementById("UtilitiesContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
-  }
-
-  componentDidMount(){
-    this.mountEffect();
-  }
+  
 
   render() {
     if(this.props.name === 'cointoss'){
