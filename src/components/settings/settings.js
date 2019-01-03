@@ -16,10 +16,13 @@ class Settings extends Component {
                     <p className="closeIcon"><i onClick={() => {this.setState({AnimationState: "default"}); this.props.handleSettings() }} className="fas fa-times"></i></p>
                 </div>
             </div>
-            <div className="row">
+            <div className="pt-2 row">
               <div className="col-12">
-                <Toggleswitch inputID = {"switch"} />
-                <Toggleswitch inputID = {"switch2"} />
+                <Toggleswitch inputID = {"audio"} icon = {"fa-volume-up"} />
+                <div className="d-flex align-items-center">
+                  <h4><i class="fas fa-info-circle pr-2"></i></h4>
+                  <h4>About</h4>
+                </div>
               </div>
             </div>
         </div>

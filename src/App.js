@@ -26,7 +26,8 @@ class App extends Component {
            Velocity(
                document.getElementById('SettingsContainer'),{
                    translateX: ['+=30vw','-30vw']},{
-                   duration: 300, 
+                   duration: 100,
+                   easing: "easeOutQuart", 
                    complete: () => {
                     this.setState({
                         SettingsState: "Open",
@@ -39,7 +40,8 @@ class App extends Component {
             Velocity(
                 document.getElementById('SettingsContainer'),{
                     translateX: '-=30vw'},{
-                    duration: 300,
+                    duration: 100,
+                    easing: "easeOutQuart", 
                     complete:() => {
                         this.setState({
                             SettingsState: "Closed"
