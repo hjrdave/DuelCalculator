@@ -5,10 +5,8 @@ import './App.scss';
 import Settings from './components/settings/settings.js';
 import Header from './components/header/header.js';
 import Duelboard from './components/duelboard/duelboard.js';
+import About from './components/about/about.js';
 //import Footer from './components/footer/footer.js';
-
-
-//library.add(fab, faCheckSquare, faCoffee);
 
 
 class App extends Component {
@@ -16,7 +14,8 @@ class App extends Component {
         super(props);
         this.state = { 
             SettingsState: "Closed",
-            AnimationState: "default"
+            AnimationState: "default",
+            AboutApp: false
         };
     }
 
@@ -56,62 +55,134 @@ class App extends Component {
             AnimationState: value
         })
     }
+
+    handleAboutApp = (value) => {
+        this.setState({
+            AboutApp: value
+        })
+    }
   
   render() {
-    return (
-      <div className="container-fluid app-container">
-        <Particles 
-        className="particles"
-        params={{
-          "particles": {
-              "number": {
-                  "value": 100,
-                  "density": {
-                      "enable": true,
-                      "value_area": 1500
-                  }
-              },
-              "line_linked": {
-                  "enable": true,
-                  "opacity": 0.02
-              },
-              "move": {
-                  "direction": "right",
-                  "speed": 0.30
-              },
-              "size": {
-                  "value": 1.5
-              },
-              "opacity": {
-                  "anim": {
-                      "enable": true,
-                      "speed": 1,
-                      "opacity_min": 0.05
-                  }
-              }
-          },
-          "interactivity": {
-              "events": {
-                  "onclick": {
-                      "enable": true,
-                      "mode": "push"
-                  }
-              },
-              "modes": {
-                  "push": {
-                      "particles_nb": 1
-                  }
-              }
-          },
-          "retina_detect": true
-      }}
-        />
-        <Settings handleSettings={this.handleSettings} AnimationState={this.state.AnimationState}/>
-        <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
-        <Duelboard handleAnimationState={this.handleAnimationState} AnimationState={this.state.AnimationState}/>
-        {/* <Footer /> */}
-      </div>
-    );
+    if(this.state.AboutApp === false){
+        return (
+            <div className="container-fluid app-container">
+              <Particles 
+              className="particles"
+              params={{
+                "particles": {
+                    "number": {
+                        "value": 100,
+                        "density": {
+                            "enable": true,
+                            "value_area": 1500
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "opacity": 0.02
+                    },
+                    "move": {
+                        "direction": "right",
+                        "speed": 0.30
+                    },
+                    "size": {
+                        "value": 1.5
+                    },
+                    "opacity": {
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.05
+                        }
+                    }
+                },
+                "interactivity": {
+                    "events": {
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        }
+                    },
+                    "modes": {
+                        "push": {
+                            "particles_nb": 1
+                        }
+                    }
+                },
+                "retina_detect": true
+            }}
+              />
+              <Settings 
+                  handleSettings={this.handleSettings} 
+                  AnimationState={this.state.AnimationState}
+                  handleAboutApp={this.handleAboutApp}
+              />
+              <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
+              <Duelboard handleAnimationState={this.handleAnimationState} AnimationState={this.state.AnimationState}/>
+              
+              {/* <Footer /> */}
+            </div>
+          );
+    }
+    else if(this.state.AboutApp === true){
+        return (
+            <div className="container-fluid app-container">
+              <Particles 
+              className="particles"
+              params={{
+                "particles": {
+                    "number": {
+                        "value": 100,
+                        "density": {
+                            "enable": true,
+                            "value_area": 1500
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "opacity": 0.02
+                    },
+                    "move": {
+                        "direction": "right",
+                        "speed": 0.30
+                    },
+                    "size": {
+                        "value": 1.5
+                    },
+                    "opacity": {
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.05
+                        }
+                    }
+                },
+                "interactivity": {
+                    "events": {
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        }
+                    },
+                    "modes": {
+                        "push": {
+                            "particles_nb": 1
+                        }
+                    }
+                },
+                "retina_detect": true
+            }}
+              />
+              <Settings 
+                  handleSettings={this.handleSettings} 
+                  AnimationState={this.state.AnimationState}
+                  handleAboutApp={this.handleAboutApp}
+              />
+              <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
+              <About />
+            </div>
+          );
+    }
   }
 }
 
