@@ -11,7 +11,7 @@ class Players extends Component {
   
   render() {
       return (
-        <div className="player col-4 glow">
+        <div className="player col-5 glow">
           <div className="row">
             <div className="col-12 playername pt-3 d-flex justify-content-between">
                   <p className="pl-2">

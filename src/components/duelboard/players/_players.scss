@@ -2,7 +2,7 @@
 
 .playername{
     p{
-        font-size: $font-size-base + .5;
+        font-size: $font-size-base + 1;
         color: #fff;
         text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;
 
@@ -18,7 +18,7 @@
 }
 .playercard{
     p{
-        font-size: $font-size-base + 8;
+        font-size: $font-size-base + 10;
         font-family: $font-calc;
         color: #fff;
         text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 55px #4d4dff, 0 0 75px #4d4dff;

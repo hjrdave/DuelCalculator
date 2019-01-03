@@ -5,7 +5,7 @@ import './App.scss';
 import Settings from './components/settings/settings.js';
 import Header from './components/header/header.js';
 import Duelboard from './components/duelboard/duelboard.js';
-import Footer from './components/footer/footer.js';
+//import Footer from './components/footer/footer.js';
 
 
 //library.add(fab, faCheckSquare, faCoffee);
@@ -107,7 +107,7 @@ class App extends Component {
         <Settings handleSettings={this.handleSettings} AnimationState={this.state.AnimationState}/>
         <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
         <Duelboard handleAnimationState={this.handleAnimationState} AnimationState={this.state.AnimationState}/>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

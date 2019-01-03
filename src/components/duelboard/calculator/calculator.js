@@ -51,7 +51,7 @@ class Calculator extends Component {
             <div className="col-8 d-flex justify-content-center">
               <div className="calc-numbers row d-flex justify-content-center">
                   <div className="calc-score col-12 pl-4 d-flex justify-content-start align-items-center">
-                    <p>{this.props.lifepoints[this.props.playerNumber]} {this.props.operatorType} {this.state.inputs}</p>
+                    <p>{this.props.playerName[this.props.playerNumber]} : {this.props.lifepoints[this.props.playerNumber]} {this.props.operatorType} {this.state.inputs}</p>
                   </div>
                   <div onClick={ () => this.userInputs('1') } className="col-3 p-3 d-flex justify-content-center align-items-center">
                     <p>1</p>
