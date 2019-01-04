@@ -46,9 +46,9 @@ class Calculator extends Component {
     
     return (
       <div id="CalculatorContainer" className="row pt-4 pb-4 d-flex justify-content-around">
-        <div className="col-8">
-          <div className="row">
-            <div className="col-8 d-flex justify-content-center">
+        <div className="col-10 d-flex justify-content-center">
+          <div className="row d-flex justify-content-center">
+            <div className="col-8">
               <div className="calc-numbers row d-flex justify-content-center">
                   <div className="calc-score col-12 pl-4 d-flex justify-content-start align-items-center">
                     <p>{this.props.playerName[this.props.playerNumber]} : {this.props.lifepoints[this.props.playerNumber]} {this.props.operatorType} {this.state.inputs}</p>
@@ -93,6 +93,9 @@ class Calculator extends Component {
             </div>
             <div className="col-2 d-flex justify-content-center">
               <div className="calc-numbers row d-flex justify-content-center">
+              <div onClick = {() => {this.props.handleView('mainboard'); }} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
+                <p><i class="fas fa-times"></i></p>
+              </div>
                   <div onClick={() => this.backspace()}  className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p><i class="fas fa-backspace"></i></p>
                   </div>
@@ -102,15 +105,16 @@ class Calculator extends Component {
                   <div onClick={() => {this.props.calc(this.props.operatorType, this.props.playerNumber, this.state.inputs); this.props.handleView('mainboard')}} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Enter</p>
                   </div>
+
               </div>
             </div>
-            <div className="col-2 d-flex justify-content-start">
+            {/* <div className="col-2 d-flex justify-content-start">
             <div className="calc-numbers row d-flex justify-content-center">
               <div onClick = {() => {this.props.handleView('mainboard'); }} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
                 <p><i class="fas fa-times"></i></p>
               </div>
             </div>
-          </div>
+          </div> */}
           </div>
         </div>
       </div>
