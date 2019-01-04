@@ -118,6 +118,7 @@ class App extends Component {
                   handleAboutApp={this.handleAboutApp}
               />
               <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
+              
               <Duelboard handleAnimationState={this.handleAnimationState} AnimationState={this.state.AnimationState}/>
               
               {/* <Footer /> */}
@@ -179,7 +180,7 @@ class App extends Component {
                   handleAboutApp={this.handleAboutApp}
               />
               <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
-              <About />
+              <About handleSettings={this.handleSettings} />
             </div>
           );
     }
