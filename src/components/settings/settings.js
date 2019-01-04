@@ -19,7 +19,7 @@ class Settings extends Component {
             <div className="pt-2 row">
               <div className="col-12">
                 <Toggleswitch inputID = {"audio"} icon = {"fa-volume-up"} />
-                <div onClick={() => {this.props.handleAboutApp(true); this.props.handleSettings('Closed')}} className="d-flex align-items-center">
+                <div onClick={() => {this.props.handleAboutApp(true); this.props.handleSettings('Closed')}} className="aboutapp d-flex align-items-center">
                   <h4><i class="fas fa-info-circle pr-2"></i></h4>
                   <h4>About</h4>
                 </div>

@@ -58,7 +58,8 @@ class App extends Component {
 
     handleAboutApp = (value) => {
         this.setState({
-            AboutApp: value
+            AboutApp: value,
+            AnimationState: "default"
         })
     }
   
@@ -174,13 +175,16 @@ class App extends Component {
                 "retina_detect": true
             }}
               />
-              <Settings 
+              {/* <Settings 
                   handleSettings={this.handleSettings} 
                   AnimationState={this.state.AnimationState}
                   handleAboutApp={this.handleAboutApp}
-              />
-              <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} />
-              <About handleSettings={this.handleSettings} />
+              /> */}
+              {/* <Header handleSettings={this.handleSettings} AnimationState={this.state.AnimationState} /> */}
+              
+                <About handleSettings={this.handleSettings} handleAboutApp={this.handleAboutApp} />
+              
+              
             </div>
           );
     }

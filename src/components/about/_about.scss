@@ -1,0 +1,44 @@
+//About App View Styles
+
+#AboutContainer{
+    height: 99.5vh;
+    div{
+        div{
+            div{
+                p{
+                    i{
+                        font-size: 2rem!important;
+                        color: white;
+                        transition: opacity .3s;
+                        &:hover{
+                            opacity: .6;
+                        }
+                    }
+                }
+            }
+            div{
+                div{
+                    p{
+                        a{
+                            i{
+                                font-size: 4rem!important;
+                                color: grey;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    h1{
+        font-size: 4rem;
+        font-family: SpaceText-Bold;
+    }
+    
+    
+    a{
+        color:white;
+        text-decoration: underline;
+    }
+}
