@@ -5,6 +5,12 @@
     outline: none;
     box-shadow: 0 0 40px #4d4dff;
 }
+.text-glow-green{
+    text-shadow: $font-glow-green;
+}
+.text-glow-red{
+    text-shadow: $font-glow-red;
+}
 
 //imports
 @import './components/ui/toggleswitch/_toggleswitch.scss';

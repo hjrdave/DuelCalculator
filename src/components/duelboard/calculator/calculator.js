@@ -51,7 +51,9 @@ class Calculator extends Component {
             <div className="col-8">
               <div className="calc-numbers row d-flex justify-content-center">
                   <div className="calc-score col-12 pl-4 d-flex justify-content-start align-items-center">
-                    <p>{this.props.playerName[this.props.playerNumber]} : {this.props.lifepoints[this.props.playerNumber]} {this.props.operatorType} {this.state.inputs}</p>
+                    <p>{this.props.playerName[this.props.playerNumber]} : {this.props.lifepoints[this.props.playerNumber]} 
+                    <span className={(this.props.operatorType === '-') ? "text-glow-red" : "text-glow-green"}> {this.props.operatorType} {this.state.inputs}</span>
+                    </p>
                   </div>
                   <div onClick={ () => this.userInputs('1') } className="col-3 p-3 d-flex justify-content-center align-items-center">
                     <p>1</p>
@@ -93,15 +95,16 @@ class Calculator extends Component {
             </div>
             <div className="col-2 d-flex justify-content-center">
               <div className="calc-numbers row d-flex justify-content-center">
-              <div onClick = {() => {this.props.handleView('mainboard'); }} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
-                <p><i class="fas fa-times"></i></p>
-              </div>
-                  <div onClick={() => this.backspace()}  className="col-12 p-3 d-flex justify-content-center align-items-center">
-                    <p><i class="fas fa-backspace"></i></p>
+                  <div onClick = {() => {this.props.handleView('mainboard'); }} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
+                    <p><i class="fas fa-times"></i></p>
                   </div>
                   <div onClick={() => this.clear()} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Clear</p>
                   </div>
+                  <div onClick={() => this.backspace()}  className="col-12 p-3 d-flex justify-content-center align-items-center">
+                    <p><i class="fas fa-backspace"></i></p>
+                  </div>
+                  
                   <div onClick={() => {this.props.calc(this.props.operatorType, this.props.playerNumber, this.state.inputs); this.props.handleView('mainboard')}} className="col-12 p-3 d-flex justify-content-center align-items-center">
                     <p>Enter</p>
                   </div>
