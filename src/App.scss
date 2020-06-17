@@ -1,38 +1,22 @@
-//Bootstrap 4 
-@import './scss/bootstrap/bootstrap.scss';
 
-//Font Awesome
-@import "./scss/font-awesome/fontawesome.scss";
+//Bootstrap 4
+@use '~bootstrap/scss/bootstrap.scss';
 
-//Variables
-@import './scss/_variables.scss';
+//variables
+@use './components/app-ui/variables';
 
-//Typography
-@import './scss/_typography.scss';
+.App{
+    color: rgba(255,255,255,.7);
+    background-color: lighten(black, 10%);
 
-//User Interface
-@import './components/ui/_ui.scss';
-
-.app-container{
-    height: 100vh;
-    width: 100vw;
-    background-color: $background;
-    color: white;
-    overflow: hidden !important;
-
-    .particles{
-        position: fixed!important;
-        height: 100%;
+    .page-container{
         width: 100%;
-        //transform: scale(4);
-       // opacity: 0;
+    }
+
+    .active{
+        color: lightseagreen;
+    }
+    a{
+        color: white;
     }
 }
-
-//Partials
-@import './components/settings/_settings.scss';
-@import './components/header/_header.scss';
-@import './components/duelboard/_duelboard.scss';
-@import './components/about/_about.scss';
-@import './components/footer/_footer.scss';
-
