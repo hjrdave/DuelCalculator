@@ -1,0 +1,28 @@
+@use '../variables' as *;
+
+.player{
+    .player-name{
+        p{
+            font-size: $font-size-base + 1;
+            color: #fff;
+            text-shadow: $font-glow-main;
+    
+            i{
+                cursor: pointer; 
+                transition: opacity .3s;
+                &:hover{
+                    opacity: .5;
+                }
+            }
+            
+        }
+    }
+    .player-card{
+        p{
+            font-size: $font-size-base + 10;
+            font-family: $font-calc;
+            color: #fff;
+            text-shadow: $font-glow-main;
+        }
+    }
+}

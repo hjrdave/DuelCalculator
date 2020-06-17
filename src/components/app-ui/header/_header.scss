@@ -1,0 +1,12 @@
+@use '../variables' as *;
+
+.header{
+    background-color: $background-dark;
+    height: $header-height;
+    .navbar-brand{
+        color: white;
+    }
+    .navbar-text{
+        color: white;
+    }
+}

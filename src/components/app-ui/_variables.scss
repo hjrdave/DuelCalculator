@@ -1,18 +1,20 @@
 
-//theme (Mediafish - light)
+//App Variables
 
-$dark-1: #3D3143;
-$dark-2: #4A3C52;
-$dark-3: lighten($dark-2, 50%);
-$dark-0: darken($dark-1, 10%);
-$bk-color:#F2F3F3;
-
-//colors (based off of bootstrap 4 color scheme)
-$green: #27A744;
-$grey: #6C747D; 
-
-//sizes
-$header-height: 50px;
+//Theme colors
+$primary:       white;
+$primary-light: lighten($primary, 5%);
+$primary-dark:  darken($primary, 5%);
+$background:    #252525;
+$background-dark:darken($background, 5%);
+$grey:          grey;
+$light:         lighten($grey, 10%);
+$light-2:       lighten($grey, 20%);
+$font-dark:     $primary;
+$font-light:    $font-dark;
+$font-calc:     "Digital-7";
+$header-height: 65px;
+$scene-height: calc(100vh - #{$header-height});
 
 //Fonts and Text
 $font-weight-light:  200;
@@ -26,12 +28,13 @@ $h4-font-size:  $font-size-base * 1.35;
 $h5-font-size:  $font-size-base * 1.25;
 $h6-font-size:  $font-size-base;
 
-//material design box shadows
-$shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-$shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-$shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-$shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-$shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$font: 'SpaceText', sans-serif;
+$font-light: 'SpaceText-light', sans-serif;
+$font-medium: 'SpaceText-medium', sans-serif;
+$font-bold: 'SpaceText-bold', sans-serif;
+$font-family-base: $font;
 
-//border-radius
-$card-border-radius: 5px 5px 5px 5px;
+//Font Effects
+$font-glow-main: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4d4dff, 0 0 30px #4d4dff, 0 0 40px #4d4dff, 0 0 0px #4d4dff, 0 0 0px #4d4dff;
+$font-glow-green: 0 0 0px #fff, 0 0 5px #fff, 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 35px #39ff14, 0 0 0px #39ff14, 0 0 0px #39ff14;
+$font-glow-red: 0 0 0px #fff, 0 0 5px #fff, 0 0 15px #ff0101, 0 0 25px #ff0101, 0 0 35px #ff0101, 0 0 0px #ff0101, 0 0 0px #ff0101;
