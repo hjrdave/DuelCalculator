@@ -5,6 +5,9 @@
 //variables
 @use './components/app-ui/variables' as *;
 
+//fonts
+@use './components/app-ui/fonts';
+
 .App{
     height: 100vh;
     width: 100vw;
