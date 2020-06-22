@@ -1,0 +1,16 @@
+@use '../variables' as *;
+
+.settings-menu-backdrop{
+    position: absolute;
+    background-color: rgba(0,0,0, .5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    .settings-menu{
+        position: absolute;
+        background-color: darken($background-dark, 3%);
+        width: 400px;
+        height: 100vh;
+        
+    }
+}

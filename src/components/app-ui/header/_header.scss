@@ -5,8 +5,10 @@
     height: $header-height;
     .navbar-brand{
         color: white;
+        font-size: $font-size-base + .75rem;
     }
     .navbar-text{
         color: white;
+        font-size: $font-size-base + .4rem;
     }
 }
