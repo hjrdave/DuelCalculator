@@ -1,19 +1,19 @@
 import React from 'react';
-import { updateStore, useTreble } from 'treble-gsm';
-import './_settings-menu.scss';
+import { useTreble } from 'treble-gsm';
+import styles from './settingsMenu.module.scss';
 
 export default function SettingsMenu() {
 
-    const [{settingsMenuState}, dispatch] = useTreble();
+    const [{ settingsMenuState }, Store] = useTreble();
 
     return (
         <>
-            <div className={`settings-menu-backdrop ${(settingsMenuState) ? 'settings-menu-active' : ''}`}>
-                <div className='settings-menu'>
-                    <div className='settings-menu-header d-flex justify-content-between align-items-center p-3 px-4'>
+            <div className={`${styles.backdrop} ${(settingsMenuState) ? styles.active : ''}`}>
+                <div className={(settingsMenuState) ? styles.settingsMenuContainerActive : styles.settingsMenuContainer}>
+                    <div className={`${styles.settingsMenuHeader} d-flex justify-content-between align-items-center p-3 px-4`}>
                         <p></p>
                         <h3>Settings</h3>
-                        <i className="fas fa-times cursor" onClick={() => updateStore('updateSettingsMenuState', settingsMenuState, dispatch, {toggle: true})}></i>
+                        <i className="fas fa-times cursor" onClick={() => Store.toggle('updateSettingsMenuState', settingsMenuState)}></i>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 @use '../variables' as *;
 
 .player{
-    .player-name{
+    .playerName{
         p{
             font-size: $font-size-base + 1;
             color: #fff;
@@ -17,7 +17,7 @@
             
         }
     }
-    .player-card{
+    .playerCard{
         p{
             font-size: $font-size-base + 10;
             font-family: $font-calc;
