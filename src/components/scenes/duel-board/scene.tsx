@@ -2,12 +2,12 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Player from '../../app-ui/player';
 import UtilityBar from '../../app-ui/utility-bar';
-import './_scene.scss';
+import styles from './scene.module.scss';
 
 function Scene() {
     return (
         <>
-            <Container fluid className='duelboard d-flex flex-column justify-content-between'>
+            <Container fluid className={`${styles.duelboard} d-flex flex-column justify-content-between`}>
                 <Row className='d-flex justify-content-center' style={{ height: '100%' }}>
                     <Col className='d-flex flex-column justify-content-center'>
                         <Row className='d-flex justify-content-center'>
