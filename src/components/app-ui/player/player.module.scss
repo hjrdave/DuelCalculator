@@ -25,4 +25,14 @@
             text-shadow: $font-glow-main;
         }
     }
+    .playerCardSmall{
+        p{
+            font-family: $font-calc;
+            color: #fff;
+            text-shadow: $font-glow-main;
+            font-size: $font-size-base + 2;
+        }
+    }
 }
+
+

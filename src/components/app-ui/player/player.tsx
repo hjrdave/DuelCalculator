@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 import CountUp from 'react-countup';
 import styles from './player.module.scss';
 
-export default function Player() {
+interface Props {
+    number: number;
+    name: string;
+}
+export default function Player({ number, name }: Props) {
 
     return (
         <>
-            <div className={`${styles.player} glow m-4`}>
+            <div className={`${styles.player} ${styles.playerCardSmall} glow m-4`}>
                 <div className={`${styles.playerName} pt-3 d-flex justify-content-between`}>
                     <p className='pl-4'><Link to={'/lp-calculator'}><i className="fas fa-plus"></i></Link></p>
-                    <p>Player 1</p>
+                    <p>{name}</p>
                     <p className='pr-4'><Link to={'/lp-calculator'}><i className="fas fa-minus"></i></Link></p>
                 </div>
                 <div className={`${styles.playerCard} d-flex justify-content-center`}>

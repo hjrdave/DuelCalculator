@@ -14,4 +14,13 @@
             color: white!important;
         }
     }
+
+    .fullScreenIcon{
+
+        transition: transform .3s;
+
+        &:hover{
+            transform: scale(1.3);
+        }
+    }
 }

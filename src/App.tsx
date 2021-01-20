@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router} from 'react-router-treble';
+import { BrowserRouter as Router } from 'react-router-treble';
 import Routes from './components/routes';
 import Header from './components/app-ui/header';
 import SettingsMenu from './components/app-ui/settings-menu';
 import Treble from 'treble-gsm';
-import Store from './Store';
+import Store from './components/Store';
 
- 
+
 const App: React.FC = () => {
   return (
     <Treble store={Store}>
@@ -15,8 +15,8 @@ const App: React.FC = () => {
         <div className='d-flex'>
           <Router basename={"/"}>
             <div className='page-container'>
-              <SettingsMenu/>
-              <Header/>
+              <SettingsMenu />
+              <Header />
               <Routes />
             </div>
           </Router>
