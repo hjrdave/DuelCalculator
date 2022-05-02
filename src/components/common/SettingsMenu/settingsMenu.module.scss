@@ -1,0 +1,48 @@
+@use '../../styles/variables'as *;
+
+.backdrop {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    will-change: background-color;
+    transition: background-color .3s;
+    pointer-events: none;
+
+    .settingsMenuContainer {
+        position: absolute;
+        background-color: darken($background-dark, 3%);
+        width: 400px;
+        height: 100vh;
+        will-change: transform;
+        transition: transform .1s;
+        transform: translate(-400px);
+        backface-visibility: hidden;
+
+        .settingsMenuHeader {
+            i {
+                font-size: $font-size-base + .6rem;
+            }
+        }
+    }
+}
+
+.active {
+
+    display: block;
+    background-color: rgba(0, 0, 0, .3);
+    pointer-events: auto;
+
+    .settingsMenuContainerActive {
+        position: absolute;
+        background-color: darken($background-dark, 3%);
+        width: 400px;
+        height: 100vh;
+        will-change: transform;
+        transition: transform .2s;
+        transform: translate(0px);
+        backface-visibility: hidden;
+    }
+
+}

@@ -1,0 +1,29 @@
+@use '../../styles/variables'as *;
+
+.header {
+    background-color: $background-dark;
+    height: $header-height;
+
+    .navbarBrand {
+        color: white;
+        font-size: $font-size-base + .75rem;
+    }
+
+    .navbarText {
+        color: white;
+        font-size: $font-size-base + .4rem;
+
+        .settingsIcon {
+            color: white !important;
+        }
+    }
+
+    .fullScreenIcon {
+
+        transition: transform .3s;
+
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+}
