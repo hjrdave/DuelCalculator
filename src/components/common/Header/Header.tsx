@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Button, Offcanvas, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useTreble } from 'treble-gsm';
 import styles from './header.module.scss';
@@ -54,15 +54,28 @@ export default function Header() {
         }
     }
 
+    const [showSettings, setShowSettings] = React.useState(false);
+
+    const openSettingsMenu = () => setShowSettings(true);
+    const closeSettingsMenu = () => setShowSettings(false);
+
     return (
         <>
             <Navbar className={`${styles.header} d-flex justify-content-between`}>
-                <Navbar.Text className={styles.navbarText}>
-                    <i className={`fas fa-cog cursor ${styles.settingsIcon}`} onClick={() => Store.toggle('updateSettingsMenuState', settingsMenuState)}></i>
+                <Navbar.Text className={`px-3 ${styles.navbarText}`}>
+                    <i className={`fas fa-cog cursor ${styles.settingsIcon}`} onClick={() => openSettingsMenu()}></i>
                 </Navbar.Text>
-                <Navbar.Brand href="#home" className={styles.navbarBrand}><Link to={'/'}>DuelCalculator.js</Link></Navbar.Brand>
-                <Navbar.Text className={styles.navbarText} onClick={() => ToggleFullscreen()}><i className={`fas ${fullscreenIcon} ${styles.fullScreenIcon} cursor`}></i></Navbar.Text>
+                <Navbar.Brand className={styles.navbarBrand}><Link to={'/'}>DuelCalculator.js</Link></Navbar.Brand>
+                <Navbar.Text className={`px-3 ${styles.navbarText}`} onClick={() => ToggleFullscreen()}><i className={`fas ${fullscreenIcon} ${styles.fullScreenIcon} cursor`}></i></Navbar.Text>
             </Navbar>
+            <Offcanvas show={showSettings} onHide={closeSettingsMenu} >
+                <Offcanvas.Header closeButton className={`${styles.settingsMenu}`}>
+                    <Offcanvas.Title>Settings</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body className={styles.settingsMenu}>
+
+                </Offcanvas.Body>
+            </Offcanvas>
         </>
     )
 }

@@ -1,6 +1,6 @@
-import { createStore, useTreble, TUseTreble } from 'treble-gsm';
+import { createStore, useTreble, TrebleGSM } from 'treble-gsm';
 
-export interface IStore {
+export interface IState {
     settingsMenuState: boolean;
     playerAmount: number;
     playerData: {
@@ -43,16 +43,6 @@ const Store = createStore([
                     name: 'player 2',
                     number: 2,
                     lifePoints: 8000
-                },
-                {
-                    name: 'player 3',
-                    number: 3,
-                    lifePoints: 8000
-                },
-                {
-                    name: 'player 4',
-                    number: 4,
-                    lifePoints: 8000
                 }
             ]
         }
@@ -60,7 +50,7 @@ const Store = createStore([
 
 ]);
 
-export const useAppStore = () => useTreble() as TUseTreble<IStore, TActions>
+export const useAppStore = () => useTreble<IState, TrebleGSM.Dispatchers, TrebleGSM.Utilities>();
 
 export default Store;
 

@@ -10,11 +10,13 @@ export default function Routes() {
 
   return (
     <RoutesRR>
-      <Route index element={Duelboard} />
-      <Route path={'/about'} element={About} />
-      <Route path={'/coin-toss'} element={CoinToss} />
-      <Route path={'/dice-roll'} element={DiceRoll} />
-      <Route path={'/lp-calculator'} element={LPCalculator} />
+      <Route path={'/'} element={<Outlet />}>
+        <Route index element={<Duelboard />} />
+        <Route path={'/about'} element={<About />} />
+        <Route path={'/coin-toss'} element={<CoinToss />} />
+        <Route path={'/dice-roll'} element={<DiceRoll />} />
+        <Route path={'/lp-calculator'} element={<LPCalculator />} />
+      </Route>
     </RoutesRR >
   );
 }

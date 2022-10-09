@@ -1,4 +1,4 @@
-@use '../../styles/variables'as *;
+@use '../../styles/variables' as *;
 
 .header {
     background-color: $background-dark;
@@ -7,6 +7,11 @@
     .navbarBrand {
         color: white;
         font-size: $font-size-base + .75rem;
+
+        a {
+            text-decoration: none;
+        }
+
     }
 
     .navbarText {
@@ -25,5 +30,14 @@
         &:hover {
             transform: scale(1.3);
         }
+    }
+}
+
+.settingsMenu {
+    background-color: $background-dark;
+    color: white;
+
+    :global(.btn-close) {
+        background-color: white;
     }
 }

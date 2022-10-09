@@ -13,9 +13,9 @@ export default function Player({ number, name }: Props) {
         <>
             <div className={`${styles.player} ${styles.playerCardSmall} glow m-4`}>
                 <div className={`${styles.playerName} pt-3 d-flex justify-content-between`}>
-                    <p className='pl-4'><Link to={'/lp-calculator'}><i className="fas fa-plus"></i></Link></p>
+                    <p className='ps-4'><Link to={'/lp-calculator'}><i className="fas fa-plus"></i></Link></p>
                     <p>{name}</p>
-                    <p className='pr-4'><Link to={'/lp-calculator'}><i className="fas fa-minus"></i></Link></p>
+                    <p className='pe-4'><Link to={'/lp-calculator'}><i className="fas fa-minus"></i></Link></p>
                 </div>
                 <div className={`${styles.playerCard} d-flex justify-content-center`}>
                     <p>

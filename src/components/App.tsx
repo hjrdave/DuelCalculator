@@ -15,7 +15,6 @@ const App: React.FC = () => {
         <div className='d-flex'>
           <Router basename={"/"}>
             <div className='page-container'>
-              <SettingsMenu />
               <Header />
               <Routes />
             </div>
