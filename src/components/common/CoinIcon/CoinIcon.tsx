@@ -1,11 +1,22 @@
 import React from 'react';
 
-export default function CoinIcon() {
+interface Props {
+    className?: string;
+    classNameContainer?: string;
+    type: 'heads' | 'tails'
+}
+export default function CoinIcon({ className, classNameContainer, type }: Props) {
 
     return (
         <>
-            <div className='d-flex justify-content-center'>
-                <i className="far fa-copyright"></i>
+            <div className={`d-flex justify-content-center ${classNameContainer}`}>
+                {
+                    (type === 'heads') ?
+                        <i className={`far fa-circle-user ${className}`}></i> :
+                        (type === 'tails') ?
+                            <i className={`far fa-copyright ${className}`}></i> : null
+                }
+
             </div>
         </>
     )
