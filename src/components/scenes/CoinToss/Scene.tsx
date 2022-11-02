@@ -1,29 +1,29 @@
 import React from 'react';
-import { useSpring, animated } from 'react-spring'
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import CoinTossBtns from '../../common/CoinTossBtns';
 import CoinIcon from '../../common/CoinIcon';
 import styles from './scene.module.scss';
-import { transform } from 'typescript';
-import { FALSE } from 'node-sass';
 
 function Scene() {
 
     const [tossCoin, setTossCoin] = React.useState(false);
     const [rotateCoin, setRotateCoin] = React.useState(false);
     const [coinFace, setCoinFace] = React.useState<'heads' | 'tails'>('heads');
+    const flipCoin = (time: number) => {
+        const faces: ('heads' | 'tails')[] = ['heads', 'tails'];
+        setTimeout(() => { setCoinFace(faces[0]) }, time);
+        setTimeout(() => { setCoinFace(faces[1]) }, time * 2);
+        setTimeout(() => { setCoinFace(faces[0]) }, time * 3);
+        setTimeout(() => { setCoinFace(faces[1]) }, time * 4);
+        setTimeout(() => { setCoinFace(faces[0]) }, time * 5);
+    }
     const onCoinToss = () => {
         const randomNum = Math.random();
         const result = (randomNum > .5) ? 'heads' : 'tails';
-        // const coinFlip = setInterval(() => {
-        //     const nextFace = (coinFace === 'heads') ? 'tails' : 'heads'
-        //     setCoinFace((nextFace));
-        // }, 50);
         setTossCoin(true);
         setRotateCoin(true);
+        flipCoin(100);
         setTimeout(() => {
-            //clearInterval(coinFlip);
             setCoinFace(result);
         }, 500);
         setTimeout(() => {
