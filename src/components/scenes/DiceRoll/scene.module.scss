@@ -1,7 +1,7 @@
 //Cointoss utility styles
 @use '../../styles/variables.scss' as *;
 
-.coinToss {
+.diceRoll {
     height: $scene-height;
 
     i {
@@ -11,29 +11,29 @@
 
 }
 
-.coinTossBtns {
+.diceRollBtns {
     color: white;
     border-color: $background-dark;
     background-color: $background-dark;
 }
 
-.translateCoin {
-    animation-name: translateCoinAnimate;
+.translateDice {
+    animation-name: translateDiceAnimate;
     animation-duration: .35s;
     animation-timing-function: ease-in;
     animation-iteration-count: 2;
     animation-direction: alternate;
 }
 
-.rotateCoin {
-    animation-name: rotateCoinAnimate;
-    animation-duration: .35s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: 2;
-    animation-direction: alternate;
-}
+// .rotateCoin {
+//     animation-name: rotateCoinAnimate;
+//     animation-duration: .35s;
+//     animation-timing-function: ease-in;
+//     animation-iteration-count: 2;
+//     animation-direction: alternate;
+// }
 
-@keyframes translateCoinAnimate {
+@keyframes translateDiceAnimate {
     0% {
         transform: translateY(0px);
     }
@@ -43,12 +43,12 @@
     }
 }
 
-@keyframes rotateCoinAnimate {
-    0% {
-        transform: rotateX(0deg);
-    }
+// @keyframes rotateCoinAnimate {
+//     0% {
+//         transform: rotateX(0deg);
+//     }
 
-    100% {
-        transform: rotateX(360deg);
-    }
-}
+//     100% {
+//         transform: rotateX(360deg);
+//     }
+// }
