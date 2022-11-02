@@ -12,9 +12,20 @@ function Scene() {
 
     const [tossCoin, setTossCoin] = React.useState(false);
     const [rotateCoin, setRotateCoin] = React.useState(false);
+    const [coinFace, setCoinFace] = React.useState<'heads' | 'tails'>('heads');
     const onCoinToss = () => {
+        const randomNum = Math.random();
+        const result = (randomNum > .5) ? 'heads' : 'tails';
+        // const coinFlip = setInterval(() => {
+        //     const nextFace = (coinFace === 'heads') ? 'tails' : 'heads'
+        //     setCoinFace((nextFace));
+        // }, 50);
         setTossCoin(true);
         setRotateCoin(true);
+        setTimeout(() => {
+            //clearInterval(coinFlip);
+            setCoinFace(result);
+        }, 500);
         setTimeout(() => {
             setTossCoin(false);
             setRotateCoin(false);
@@ -28,7 +39,7 @@ function Scene() {
                     <Col xs={8}>
                         <div className={`${(tossCoin) ? styles.translateCoin : ''}`}>
                             <div className={`${(rotateCoin) ? styles.rotateCoin : ''}`}>
-                                <CoinIcon type={'heads'} />
+                                <CoinIcon type={coinFace} />
                             </div>
                         </div>
                         <div className='d-flex justify-content-center pt-4'>
