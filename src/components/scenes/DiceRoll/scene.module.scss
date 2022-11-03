@@ -25,13 +25,20 @@
     animation-direction: alternate;
 }
 
-// .rotateCoin {
-//     animation-name: rotateCoinAnimate;
-//     animation-duration: .35s;
-//     animation-timing-function: ease-in;
-//     animation-iteration-count: 2;
-//     animation-direction: alternate;
-// }
+.bounceDice {
+    animation-name: bounceDiceAnimate;
+    animation-delay: .36s;
+    animation-duration: 1.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.rotateDice {
+    animation-name: rotateDiceAnimate;
+    animation-delay: .5s;
+    animation-duration: 1.3s;
+    animation-fill-mode: both;
+}
 
 @keyframes translateDiceAnimate {
     0% {
@@ -43,12 +50,43 @@
     }
 }
 
-// @keyframes rotateCoinAnimate {
-//     0% {
-//         transform: rotateX(0deg);
-//     }
+@keyframes bounceDiceAnimate {
 
-//     100% {
-//         transform: rotateX(360deg);
-//     }
-// }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rotateDiceAnimate {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    25% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        transform: rotate(-20deg);
+    }
+
+    75% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

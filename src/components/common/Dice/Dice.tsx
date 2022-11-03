@@ -24,3 +24,4 @@ export default function Dice({ className, classNameContainer, type }: Props) {
         </>
     )
 }
+

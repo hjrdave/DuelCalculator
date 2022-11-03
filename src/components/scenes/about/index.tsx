@@ -1,3 +1,3 @@
-import Scene from './Scene';
+import Scene from './scene';
 
 export default Scene;
