@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './dice.module.scss';
 
 interface Props {
     className?: string;
@@ -18,7 +19,7 @@ export default function Dice({ className, classNameContainer, type }: Props) {
 
     return (
         <>
-            <div className={`d-flex justify-content-center ${classNameContainer}`}>
+            <div className={`${styles.compContainer} d-flex justify-content-center ${classNameContainer}`}>
                 <i className={`fa-solid fa-dice-${diceSide[type]} ${className}`}></i>
             </div>
         </>

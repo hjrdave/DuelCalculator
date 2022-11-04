@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Content from '../../common/Content';
 import Dice from '../../common/Dice';
 import styles from './scene.module.scss';
 
@@ -29,8 +30,8 @@ export default function Scene() {
 
     return (
         <>
-            <Container fluid className={`${styles.diceRoll} d-flex flex-column justify-content-center`}>
-                <Row className='d-flex justify-content-center'>
+            <Content className={` d-flex flex-column justify-content-center`}>
+                <Row className='d-flex justify-content-center align-items-center'>
                     <Col xs={8}>
                         <div className={`${(tossDice) ? styles.translateDice : ''}`}>
                             <div className={`${(tossDice) ? styles.bounceDice : ''}`}>
@@ -47,7 +48,7 @@ export default function Scene() {
                         </div>
                     </Col>
                 </Row>
-            </Container>
+            </Content>
         </>
     )
 }
