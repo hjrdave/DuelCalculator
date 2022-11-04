@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './coinIcon.module.scss';
 
 interface Props {
     className?: string;
@@ -9,7 +10,7 @@ export default function CoinIcon({ className, classNameContainer, type }: Props)
 
     return (
         <>
-            <div className={`d-flex justify-content-center ${classNameContainer}`}>
+            <div className={`${styles.compContainer} d-flex justify-content-center ${classNameContainer}`}>
                 {
                     (type === 'heads') ?
                         <i className={`far fa-circle-user ${className}`}></i> :

@@ -15,8 +15,8 @@ export default function Routes() {
         <Route path={'/about'} element={<About />} />
         <Route path={'/coin-toss'} element={<CoinToss />} />
         <Route path={'/dice-roll'} element={<DiceRoll />} />
-        <Route path={'/lp-calculator'} element={<LPCalculator />} />
+        <Route path={'/lp-calculator/:operator'} element={<LPCalculator />} />
       </Route>
-    </RoutesRR >
+    </RoutesRR>
   );
 }

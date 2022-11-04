@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Content from '../../common/Content';
 import CoinIcon from '../../common/CoinIcon';
 import styles from './scene.module.scss';
 
@@ -34,8 +35,8 @@ function Scene() {
 
     return (
         <>
-            <Container fluid className={`${styles.coinToss} d-flex flex-column justify-content-center`}>
-                <Row className='d-flex justify-content-center'>
+            <Content className={`d-flex justify-content-center align-items-center`}>
+                <Row>
                     <Col xs={8}>
                         <div className={`${(tossCoin) ? styles.translateCoin : ''}`}>
                             <div className={`${(rotateCoin) ? styles.rotateCoin : ''}`}>
@@ -43,14 +44,14 @@ function Scene() {
                             </div>
                         </div>
                         <div className='d-flex justify-content-center pt-4'>
-                            <div className='mt-4'>
+                            <div className='d-flex mt-4'>
                                 <Button disabled={(tossCoin || rotateCoin) ? true : false} className={`me-2 px-4 ${styles.coinTossBtns}`} onClick={() => onCoinToss()}>Toss</Button>
                                 <Link to={'/'}><Button className={`ms-2 px-4  ${styles.coinTossBtns}`}>Close</Button></Link>
                             </div>
                         </div>
                     </Col>
                 </Row>
-            </Container>
+            </Content>
         </>
     )
 }

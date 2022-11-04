@@ -8,14 +8,20 @@ interface Props {
     onClick: (value: string | number) => void;
     size: ColProps["xs"];
     className?: string;
+    icon?: JSX.Element;
 };
 
-export default function KeyBtn({ value, label, onClick, size, className }: Props) {
+export default function KeyBtn({ value, label, onClick, size, className, icon }: Props) {
 
     return (
         <>
             <Col xs={size} className={`${styles.compContainer} ${className} p-3 d-flex justify-content-center align-items-center`} onClick={() => onClick(value)}>
-                <p className={'m-0'}>{label}</p>
+                <p className={'m-0'}>
+                    {
+                        (icon) ? <span className={`${styles.icon} pe-3`}>{icon}</span> : null
+                    }
+                    {label}
+                </p>
             </Col>
         </>
     )

@@ -1,48 +1,51 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap'
 import KeyBtn from '../KeyBtn';
+import CalcSum from '../CalcScore/CalcScore';
 import styles from './calculator.module.scss';
 
 interface Props {
-  inputs: any[];
-  playerNumber: number;
-  lifePoints: number[];
-  operatorType: '-' | '+';
+  lifePoints: number;
+  operatorType?: 'minus' | 'add';
   playerName: string;
-  handleView: (value?: any) => void;
+  onCancel: () => void;
+  onEnter: (calcValue: number) => void;
 }
-export default function Calculator({ inputs, playerNumber, lifePoints, operatorType, playerName, handleView }: Props) {
+export default function Calculator({ lifePoints, operatorType, playerName, onCancel, onEnter: _onEnter }: Props) {
 
-  //accepts user input and adds to input array
-  const userInputs = (value?: any, value2?: any, value3?: any) => {
-    // let cleanArray = [value, value2, value3].filter(function (el) { return el != null; });
-    // let inputArray = inputs.concat(cleanArray);
-    // setState({
-    //   inputs: inputArray
-    // });
+  const [userInput, setUserInput] = React.useState(0);
+
+  const onBackSpace = () => {
+    const stringInput = String(userInput);
+    if (stringInput.length > 1) {
+      const newInput = Number(stringInput.slice(0, -1));
+      setUserInput(newInput);
+    } else {
+      setUserInput(0);
+    }
   }
 
-  //deletes the last value in input array
-  const backspace = () => {
-    // inputs.pop(); 
-    // setState({
-    //   inputs: [...inputs]
-    // });
-
+  const onClear = () => {
+    setUserInput(0);
   }
 
-  //clears all values from input array
-  const clear = () => {
-    // inputs.splice(0,inputs.length);
-    // setState({
-    //   inputs: [...inputs]
-    // });
+  const onInput = (value: number | string) => {
+    const newValue = Number(`${userInput}${value}`);
+    setUserInput(newValue);
   }
 
-  //Handles UI Animations
-  // componentDidMount(){
-  //   Velocity(document.getElementById("CalculatorContainer"),{ opacity: [1,0], scale: [1, .9]},{duration:300,delay:100});
-  // }
+  const onEnter = () => {
+    const currentScore = lifePoints;
+    const input = userInput;
+    if (operatorType === 'minus') {
+      const newScore = (currentScore - input);
+      _onEnter(newScore);
+    }
+    else if (operatorType === 'add') {
+      const newScore = (currentScore + input);
+      _onEnter(newScore);
+    }
+  }
 
   return (
     <>
@@ -51,109 +54,34 @@ export default function Calculator({ inputs, playerNumber, lifePoints, operatorT
         <Col>
           <Row>
             <Col sm={12}>
-              <div className={`${styles.calcScore} col-12 pl-4 d-flex justify-content-start align-items-center`}>
-                <p>{playerName[playerNumber]} : {lifePoints[playerNumber]}
-                  <span className={(operatorType === '-') ? "text-glow-red" : "text-glow-green"}> {operatorType} {inputs}</span>
-                </p>
-              </div>
+              <CalcSum
+                playerName={playerName}
+                total={lifePoints}
+                operatorType={operatorType || 'minus'}
+                input={userInput}
+              />
             </Col>
-            <KeyBtn size={3} label={'1'} value={1} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'2'} value={2} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'3'} value={3} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'4'} value={4} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'5'} value={5} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'6'} value={6} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'7'} value={7} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'8'} value={8} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'9'} value={9} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'0'} value={0} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'00'} value={'00'} onClick={(value) => alert(value)} />
-            <KeyBtn size={3} label={'000'} value={'000'} onClick={(value) => alert(value)} />
+            <KeyBtn size={3} label={'1'} value={1} onClick={onInput} />
+            <KeyBtn size={3} label={'2'} value={2} onClick={onInput} />
+            <KeyBtn size={3} label={'3'} value={3} onClick={onInput} />
+            <KeyBtn size={3} label={'4'} value={4} onClick={onInput} />
+            <KeyBtn size={3} label={'5'} value={5} onClick={onInput} />
+            <KeyBtn size={3} label={'6'} value={6} onClick={onInput} />
+            <KeyBtn size={3} label={'7'} value={7} onClick={onInput} />
+            <KeyBtn size={3} label={'8'} value={8} onClick={onInput} />
+            <KeyBtn size={3} label={'9'} value={9} onClick={onInput} />
+            <KeyBtn size={3} label={'0'} value={0} onClick={onInput} />
+            <KeyBtn size={3} label={'00'} value={'00'} onClick={onInput} />
+            <KeyBtn size={3} label={'000'} value={'000'} onClick={onInput} />
           </Row>
         </Col>
         <Col sm={4} className={'d-flex flex-column'}>
-          <KeyBtn size={12} label={'Cancel'} value={1} onClick={(value) => alert(value)} />
-          <KeyBtn size={12} label={'Clear'} value={2} onClick={(value) => alert(value)} />
-          <KeyBtn size={12} label={'Backspace'} value={3} onClick={(value) => alert(value)} />
-          <KeyBtn size={12} label={'Enter'} value={4} onClick={(value) => alert(value)} className={'flex-grow-1'} />
+          <KeyBtn size={12} label={'Cancel'} value={'cancel'} icon={<i className="fa-solid fa-xmark"></i>} onClick={onCancel} />
+          <KeyBtn size={12} label={'Clear'} value={'clear'} icon={<i className="fa-solid fa-rotate-left"></i>} onClick={onClear} />
+          <KeyBtn size={12} label={'Backspace'} value={'backSpace'} icon={<i className="fa-solid fa-delete-left"></i>} onClick={onBackSpace} />
+          <KeyBtn size={12} label={'Enter'} value={'enter'} icon={<i className="fa-solid fa-arrow-turn-down ps-2" style={{ transform: 'rotate(90deg)' }}></i>} onClick={() => onEnter()} className={'flex-grow-1'} />
         </Col>
       </div>
-      {/* <div className={`${styles.compContainer} row pt-4 pb-4 d-flex justify-content-around`}>
-      <div className="col-10 d-flex justify-content-center">
-        <div className="row d-flex justify-content-center">
-          <div className="col-8">
-            <div className={`${styles.calcNumbers} row d-flex justify-content-center`}>
-              <div className={`${styles.calcScore} col-12 pl-4 d-flex justify-content-start align-items-center`}>
-                <p>{playerName[playerNumber]} : {lifePoints[playerNumber]}
-                  <span className={(operatorType === '-') ? "text-glow-red" : "text-glow-green"}> {operatorType} {inputs}</span>
-                </p>
-              </div>
-              <div onClick={() => userInputs('1')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>1</p>
-              </div>
-              <div onClick={() => userInputs('2')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>2</p>
-              </div>
-              <div onClick={() => userInputs('3')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>3</p>
-              </div>
-              <div onClick={() => userInputs('4')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>4</p>
-              </div>
-              <div onClick={() => userInputs('5')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>5</p>
-              </div>
-              <div onClick={() => userInputs('6')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>6</p>
-              </div>
-              <div onClick={() => userInputs('7')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>7</p>
-              </div>
-              <div onClick={() => userInputs('8')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>8</p>
-              </div>
-              <div onClick={() => userInputs('9')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>9</p>
-              </div>
-              <div onClick={() => userInputs('0')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>0</p>
-              </div>
-              <div onClick={() => userInputs('0', '0')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>00</p>
-              </div>
-              <div onClick={() => userInputs('0', '0', '0')} className="col-3 p-3 d-flex justify-content-center align-items-center">
-                <p>000</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-2 d-flex justify-content-center">
-            <div className={`${styles.calcNumbers} row d-flex justify-content-center`}>
-              <div onClick={() => { handleView('mainboard'); }} className={`${styles.calcClose} col-12 p-3 d-flex justify-content-center align-items-center`}>
-                <p><i className="fas fa-times"></i></p>
-              </div>
-              <div onClick={() => clear()} className="col-12 p-3 d-flex justify-content-center align-items-center">
-                <p>Clear</p>
-              </div>
-              <div onClick={() => backspace()} className="col-12 p-3 d-flex justify-content-center align-items-center">
-                <p><i className="fas fa-backspace"></i></p>
-              </div>
-
-              <div onClick={() => { calc(operatorType, playerNumber, inputs); handleView('mainboard') }} className="col-12 p-3 d-flex justify-content-center align-items-center">
-                <p>Enter</p>
-              </div>
-
-            </div>
-          </div>
-          <div className="col-2 d-flex justify-content-start">
-          <div className="calc-numbers row d-flex justify-content-center">
-            <div onClick = {() => {handleView('mainboard'); }} className="calc-close col-12 p-3 d-flex justify-content-center align-items-center">
-              <p><i class="fas fa-times"></i></p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div> */}
     </>
   );
 }

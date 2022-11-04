@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import Content from '../../common/Content';
 import Player from '../../common/Player';
 import UtilityBar from '../../common/UtilityBar';
 import { useAppStore } from '../../Store';
@@ -12,7 +13,7 @@ function Scene() {
 
     return (
         <>
-            <Container fluid className={`${styles.duelboard} d-flex flex-column justify-content-between`}>
+            <Content className={'d-flex flex-column justify-content-between'}>
                 <Row className='d-flex justify-content-center' style={{ height: '100%' }}>
                     <Col className='d-flex flex-column justify-content-center'>
                         <Row className='d-flex justify-content-center'>
@@ -32,7 +33,7 @@ function Scene() {
                     </Col>
                 </Row>
                 <UtilityBar />
-            </Container>
+            </Content>
         </>
     )
 }
