@@ -22,7 +22,12 @@ function Scene() {
                                     return (
                                         <React.Fragment key={index}>
                                             <Col xs='5'>
-                                                <Player name={item.name} number={item.number} lifePoints={item.lifePoints} />
+                                                <Player
+                                                    name={item.name}
+                                                    number={item.number}
+                                                    prevLifePoints={item.prevLifePoints}
+                                                    lifePoints={item.lifePoints}
+                                                />
                                             </Col>
                                         </React.Fragment>
                                     )

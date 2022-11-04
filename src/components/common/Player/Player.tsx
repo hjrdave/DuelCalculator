@@ -7,8 +7,9 @@ interface Props {
     number: number;
     name: string;
     lifePoints: number;
+    prevLifePoints: number;
 }
-export default function Player({ number, name, lifePoints }: Props) {
+export default function Player({ number, name, lifePoints, prevLifePoints }: Props) {
 
     return (
         <>
@@ -21,7 +22,7 @@ export default function Player({ number, name, lifePoints }: Props) {
                 <div className={`${styles.playerCard} d-flex justify-content-center`}>
                     <p>
                         <CountUp
-                            start={lifePoints}
+                            start={prevLifePoints}
                             end={lifePoints}
                             delay={0}
                             duration={.75}

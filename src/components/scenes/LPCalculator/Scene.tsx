@@ -30,12 +30,13 @@ export default function Scene() {
         });
     }, [params.playerNumber]);
 
-    const calculateNewScore = (score: number) => {
+    const calculateNewScore = (newScore: number) => {
         const updatedPlayerData = playerData.map((player) => {
             if (player.number === Number(playerNumber)) {
                 return ({
                     ...player,
-                    lifePoints: score
+                    lifePoints: newScore,
+                    prevLifePoints: player.lifePoints
                 });
             } else {
                 return player
@@ -43,23 +44,6 @@ export default function Scene() {
         });
         Store.update(Util.actions.updatePlayerData, updatedPlayerData);
     }
-
-    // React.useEffect(() => {
-    //     return (() => {
-    //         navigate('/');
-    //         const updatedPlayerData = playerData.map((player) => {
-    //             if (player.number === playerNumber) {
-    //                 return {
-    //                     ...player,
-    //                     lifePoints: calcValue
-    //                 }
-    //             } else {
-    //                 return player;
-    //             }
-    //         });
-    //         Store.update(Util.actions.updatePlayerData, updatedPlayerData);
-    //     });
-    // }, [calcValue]);
 
     return (
         <>

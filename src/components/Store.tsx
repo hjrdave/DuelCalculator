@@ -6,7 +6,8 @@ export interface IState {
     playerData: {
         name: string,
         number: number,
-        lifePoints: number
+        lifePoints: number,
+        prevLifePoints: number
     }[];
 }
 
@@ -37,12 +38,14 @@ const Store = createStore([
                 {
                     name: 'player 1',
                     number: 1,
-                    lifePoints: 8000
+                    lifePoints: 8000,
+                    prevLifePoints: 8000
                 },
                 {
                     name: 'player 2',
                     number: 2,
-                    lifePoints: 8000
+                    lifePoints: 8000,
+                    prevLifePoints: 8000
                 }
             ]
         }
