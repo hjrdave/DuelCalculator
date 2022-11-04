@@ -7,11 +7,10 @@ import styles from './calculator.module.scss';
 interface Props {
   lifePoints: number;
   operatorType?: 'minus' | 'add';
-  playerName: string;
   onCancel: () => void;
   onEnter: (calcValue: number) => void;
 }
-export default function Calculator({ lifePoints, operatorType, playerName, onCancel, onEnter: _onEnter }: Props) {
+export default function Calculator({ lifePoints, operatorType, onCancel, onEnter: _onEnter }: Props) {
 
   const [userInput, setUserInput] = React.useState(0);
 
@@ -55,7 +54,6 @@ export default function Calculator({ lifePoints, operatorType, playerName, onCan
           <Row>
             <Col sm={12}>
               <CalcSum
-                playerName={playerName}
                 total={lifePoints}
                 operatorType={operatorType || 'minus'}
                 input={userInput}

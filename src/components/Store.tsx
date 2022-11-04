@@ -50,7 +50,7 @@ const Store = createStore([
 
 ]);
 
-export const useAppStore = () => useTreble<IState, TrebleGSM.Dispatchers, TrebleGSM.Utilities>();
+export const useAppStore = () => useTreble<IState, TrebleGSM.Dispatchers, TrebleGSM.Utilities<TActions>>();
 
 export default Store;
 
