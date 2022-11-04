@@ -2,7 +2,7 @@ import React from 'react';
 import Content from '../../common/Content';
 import { useAppStore } from '../../Store';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Calculator from '../../common/Calculator';
 import styles from './scene.module.scss';
 

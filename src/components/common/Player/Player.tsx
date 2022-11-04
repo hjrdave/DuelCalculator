@@ -16,7 +16,7 @@ export default function Player({ number, name, lifePoints, prevLifePoints }: Pro
             <div className={`${styles.player} ${styles.playerCardSmall} glow m-4`}>
                 <div className={`${styles.playerName} pt-3 d-flex justify-content-between`}>
                     <p className='ps-4'><Link to={`/lp-calculator/add/${number}`}><i className="fas fa-plus"></i></Link></p>
-                    <p>{name}</p>
+                    <p><Link style={{ textDecoration: 'none' }} to={`/player-name/${number}`}>{name}</Link></p>
                     <p className='pe-4'><Link to={`/lp-calculator/minus/${number}`}><i className="fas fa-minus"></i></Link></p>
                 </div>
                 <div className={`${styles.playerCard} d-flex justify-content-center`}>
