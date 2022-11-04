@@ -4,12 +4,24 @@ import Content from '../../common/Content';
 import Player from '../../common/Player';
 import UtilityBar from '../../common/UtilityBar';
 import { useAppStore } from '../../Store';
-import styles from './scene.module.scss';
 
 function Scene() {
 
+    const [{ playerData }, Store, Util] = useAppStore();
 
-    const [{ playerData, playerAmount }, Store] = useAppStore();
+    //makes sure previous and current lifepoints are sync so counts don't activate everytime pages changes
+    React.useEffect(() => {
+        return (() => {
+            const updatedData = playerData.map((player) => {
+                return {
+                    ...player,
+                    prevLifePoints: player.lifePoints,
+                    lifePoints: player.lifePoints
+                }
+            });
+            Store.update(Util.actions.updatePlayerData, updatedData);
+        })
+    }, []);
 
     return (
         <>

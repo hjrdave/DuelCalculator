@@ -38,11 +38,11 @@ export default function Calculator({ lifePoints, operatorType, onCancel, onEnter
     const input = userInput;
     if (operatorType === 'minus') {
       const newScore = (currentScore - input);
-      _onEnter(newScore);
+      _onEnter((newScore < 0) ? 0 : newScore);
     }
     else if (operatorType === 'add') {
       const newScore = (currentScore + input);
-      _onEnter(newScore);
+      _onEnter((newScore < 0) ? 0 : newScore);
     }
   }
 
