@@ -1,0 +1,11 @@
+@use '../../styles/variables.scss' as *;
+
+.compContainer {
+    // position: fixed;
+    width: 100%;
+    height: $scene-height;
+    background-image: url("../../../assets/images/bk-futuristic-rings.svg");
+    background-size: 125vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

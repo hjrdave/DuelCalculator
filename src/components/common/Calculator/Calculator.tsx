@@ -52,7 +52,7 @@ export default function Calculator({ lifePoints, operatorType, onCancel, onEnter
       <div className={`${styles.compContainer} row pt-4 pb-4 d-flex justify-content-around`}>
         <Col>
           <Row>
-            <Col sm={12}>
+            <Col sm={12} className={'p-0'}>
               <CalcSum
                 total={lifePoints}
                 operatorType={operatorType || 'minus'}
@@ -74,10 +74,10 @@ export default function Calculator({ lifePoints, operatorType, onCancel, onEnter
           </Row>
         </Col>
         <Col sm={4} className={'d-flex flex-column'}>
-          <KeyBtn size={12} label={'Cancel'} value={'cancel'} icon={<i className="fa-solid fa-xmark"></i>} onClick={onCancel} />
-          <KeyBtn size={12} label={'Clear'} value={'clear'} icon={<i className="fa-solid fa-rotate-left"></i>} onClick={onClear} />
-          <KeyBtn size={12} label={'Backspace'} value={'backSpace'} icon={<i className="fa-solid fa-delete-left"></i>} onClick={onBackSpace} />
-          <KeyBtn size={12} label={'Enter'} value={'enter'} icon={<i className="fa-solid fa-arrow-turn-down ps-2" style={{ transform: 'rotate(90deg)' }}></i>} onClick={() => onEnter()} className={'flex-grow-1'} />
+          <KeyBtn size={12} label={'Cancel'} value={'cancel'} alignLabel={'left'} icon={<i className="fa-solid fa-xmark"></i>} onClick={onCancel} />
+          <KeyBtn size={12} label={'Clear'} value={'clear'} alignLabel={'left'} icon={<i className="fa-solid fa-rotate-left"></i>} onClick={onClear} />
+          <KeyBtn size={12} label={'Backspace'} value={'backSpace'} alignLabel={'left'} icon={<i className="fa-solid fa-delete-left"></i>} onClick={onBackSpace} />
+          <KeyBtn size={12} label={'Enter'} value={'enter'} alignLabel={'left'} icon={<i className="fa-solid fa-arrow-turn-down ps-2" style={{ transform: 'rotate(90deg)' }}></i>} onClick={() => onEnter()} className={'flex-grow-1'} />
         </Col>
       </div>
     </>

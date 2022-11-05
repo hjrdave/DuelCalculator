@@ -1,9 +1,12 @@
 @use '../../styles/variables.scss' as *;
 
 .compContainer {
+    background-color: $background-dark !important;
+    border: 3px solid $background;
+
     p {
         margin: 0px;
-        padding: 0px;
+        //padding: 0px;
         font-family: $font-calc;
         font-size: $font-size-base + 5;
         color: #fff;

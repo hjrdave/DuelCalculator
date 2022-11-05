@@ -3,8 +3,9 @@ import './App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
 import Header from './common/Header';
-import SettingsMenu from './common/SettingsMenu';
+import Backdrop from './common/Backdrop';
 import Treble from 'treble-gsm';
+
 import Store from './Store';
 
 
@@ -16,7 +17,9 @@ const App: React.FC = () => {
           <Router basename={"/"}>
             <div className='page-container'>
               <Header />
-              <Routes />
+              <Backdrop>
+                <Routes />
+              </Backdrop>
             </div>
           </Router>
         </div>
