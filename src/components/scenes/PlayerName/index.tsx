@@ -1,3 +1,3 @@
-import PlayerName from './PlayerName';
+import PlayerName from './Scene';
 
 export default PlayerName;

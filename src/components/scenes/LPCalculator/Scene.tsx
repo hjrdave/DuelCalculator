@@ -1,67 +1,41 @@
 import React from 'react';
 import Content from '../../common/Content';
-import { useAppStore } from '../../Store';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
+import useDuelBoard from '../../hooks/use-duelboard';
 import Calculator from '../../common/Calculator';
 import styles from './scene.module.scss';
+import { DuelBoard } from '../../../interfaces';
 
 export default function Scene() {
-    interface IParams {
-        operator: 'minus' | 'add';
-        playerNumber: number;
-        [key: string]: any;
-    }
-    const params = useParams<IParams>();
-    const navigate = useNavigate();
-    const [{ playerData }, Store, Util] = useAppStore();
-    const [operator] = React.useState(params.operator);
-    const [playerName, setPlayerName] = React.useState('Loading...');
-    const [playerNumber] = React.useState(params.playerNumber);
-    const [currentLifePoints, setCurrentLifePoints] = React.useState(0);
-    const [calcValue, setCalcValue] = React.useState(0);
 
-    React.useEffect(() => {
-        playerData.map((player) => {
-            if (player.number === Number(playerNumber)) {
-                setPlayerName(player.name);
-                setCurrentLifePoints(player.lifePoints);
-            }
-        });
-    }, [params.playerNumber]);
-
-    const calculateNewScore = (newScore: number) => {
-        const updatedPlayerData = playerData.map((player) => {
-            if (player.number === Number(playerNumber)) {
-                return ({
-                    ...player,
-                    lifePoints: newScore,
-                    prevLifePoints: player.lifePoints
-                });
-            } else {
-                return player
-            }
-        });
-        Store.update(Util.actions.updatePlayerData, updatedPlayerData);
-    }
+    const params = useParams<DuelBoard.RouteParams>();
+    const board = useDuelBoard({
+        activePlayer: params?.playerNumber
+    });
+    const operator = params?.operator;
 
     return (
         <>
             <Content className={`d-flex flex-column justify-content-center`}>
                 <Row className='d-flex justify-content-center'>
                     <Col xs={10} className='d-flex justify-content-center'>
-                        <h1 className={styles.playerName}>Player: {playerName}</h1>
+                        <h1 className={styles.playerName}>Player: {board.getPlayerName()}</h1>
                     </Col>
                 </Row>
                 <Row className='d-flex justify-content-center'>
                     <Col xs={10} className={'pt-4'}>
                         <Calculator
-                            lifePoints={currentLifePoints}
+                            lifePoints={board.getLifePoints() || 0}
                             operatorType={operator}
-                            onCancel={() => navigate('/')}
-                            onEnter={(calcValue: number) => {
-                                calculateNewScore(calcValue);
-                                navigate('/');
+                            onCancel={board.goToHome}
+                            onEnter={(input: number) => {
+                                if (operator === 'minus') {
+                                    board.loseLifePoints(input);
+                                } else {
+                                    board.gainLifePoints(input);
+                                }
+                                board.goToHome();
                             }}
                         />
                     </Col>

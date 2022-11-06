@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Content from '../../common/Content';
+import useDuelBoard from '../../hooks/use-duelboard';
+import ConfirmBtns from '../../common/ConfirmBtns';
 import styles from './scene.module.scss';
 
 export default function Scene() {
 
+    const board = useDuelBoard();
 
     return (
         <>
@@ -15,12 +17,7 @@ export default function Scene() {
                         <div>
                             <h3 className={'text-center'}>Do you want to Reset Duelboard?</h3>
                         </div>
-                        <div className='d-flex justify-content-center pt-4'>
-                            <div className='mt-4'>
-                                <Button className={`me-2 px-4`} onClick={() => null}>Yes</Button>
-                                <Link to={'/'}><Button className={`ms-2 px-4`}>Cancel</Button></Link>
-                            </div>
-                        </div>
+                        <ConfirmBtns confirmLabel='Yes' onConfirm={() => { board.resetLifePoints(); board.goToHome() }} />
                     </Col>
                 </Row>
             </Content>

@@ -10,7 +10,7 @@ interface Props {
   onCancel: () => void;
   onEnter: (calcValue: number) => void;
 }
-export default function Calculator({ lifePoints, operatorType, onCancel, onEnter: _onEnter }: Props) {
+export default function Calculator({ lifePoints, operatorType, onCancel, onEnter }: Props) {
 
   const [userInput, setUserInput] = React.useState(0);
 
@@ -31,19 +31,6 @@ export default function Calculator({ lifePoints, operatorType, onCancel, onEnter
   const onInput = (value: number | string) => {
     const newValue = Number(`${userInput}${value}`);
     setUserInput(newValue);
-  }
-
-  const onEnter = () => {
-    const currentScore = lifePoints;
-    const input = userInput;
-    if (operatorType === 'minus') {
-      const newScore = (currentScore - input);
-      _onEnter((newScore < 0) ? 0 : newScore);
-    }
-    else if (operatorType === 'add') {
-      const newScore = (currentScore + input);
-      _onEnter((newScore < 0) ? 0 : newScore);
-    }
   }
 
   return (
@@ -77,7 +64,7 @@ export default function Calculator({ lifePoints, operatorType, onCancel, onEnter
           <KeyBtn size={12} label={'Cancel'} value={'cancel'} alignLabel={'left'} icon={<i className="fa-solid fa-xmark"></i>} onClick={onCancel} />
           <KeyBtn size={12} label={'Clear'} value={'clear'} alignLabel={'left'} icon={<i className="fa-solid fa-rotate-left"></i>} onClick={onClear} />
           <KeyBtn size={12} label={'Backspace'} value={'backSpace'} alignLabel={'left'} icon={<i className="fa-solid fa-delete-left"></i>} onClick={onBackSpace} />
-          <KeyBtn size={12} label={'Enter'} value={'enter'} alignLabel={'left'} icon={<i className="fa-solid fa-arrow-turn-down ps-2" style={{ transform: 'rotate(90deg)' }}></i>} onClick={() => onEnter()} className={'flex-grow-1'} />
+          <KeyBtn size={12} label={'Enter'} value={'enter'} alignLabel={'left'} icon={<i className="fa-solid fa-arrow-turn-down ps-2" style={{ transform: 'rotate(90deg)' }}></i>} onClick={() => onEnter(userInput)} className={'flex-grow-1'} />
         </Col>
       </div>
     </>

@@ -1,14 +1,10 @@
 import { createStore, useTreble, TrebleGSM } from 'treble-gsm';
+import { DuelBoard } from '../interfaces';
 
 export interface IState {
     settingsMenuState: boolean;
     playerAmount: number;
-    playerData: {
-        name: string,
-        number: number,
-        lifePoints: number,
-        prevLifePoints: number
-    }[];
+    playerData: DuelBoard.PlayerData[];
 }
 
 const actionKeys = {

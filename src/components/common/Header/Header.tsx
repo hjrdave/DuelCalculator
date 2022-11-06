@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Offcanvas, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { useTreble } from 'treble-gsm';
+import { Offcanvas, Navbar } from 'react-bootstrap';
+import useDuelBoard from '../../hooks/use-duelboard';
 import styles from './header.module.scss';
 
 interface IDocument {
@@ -18,7 +17,8 @@ interface IDocument {
 
 export default function Header() {
 
-    const [{ settingsMenuState }, Store] = useTreble();
+    const board = useDuelBoard();
+
     const [fullscreenIcon, setFullscreenIcon] = React.useState('fa-expand');
 
     const ToggleFullscreen = () => {
@@ -65,7 +65,7 @@ export default function Header() {
                 <Navbar.Text className={`px-3 ${styles.navbarText}`}>
                     <i className={`fas fa-cog cursor ${styles.settingsIcon}`} onClick={() => openSettingsMenu()}></i>
                 </Navbar.Text>
-                <Navbar.Brand className={styles.navbarBrand}><Link to={'/'}>DuelCalculator.js</Link></Navbar.Brand>
+                <Navbar.Brand className={styles.navbarBrand} onClick={board.goToHome}><div>DuelCalculator.js</div></Navbar.Brand>
                 <Navbar.Text className={`px-3 ${styles.navbarText}`} onClick={() => ToggleFullscreen()}><i className={`fas ${fullscreenIcon} ${styles.fullScreenIcon} cursor`}></i></Navbar.Text>
             </Navbar>
             <Offcanvas show={showSettings} onHide={closeSettingsMenu} >

@@ -1,3 +1,3 @@
-import ResetBoard from './ResetBoard';
+import ResetBoard from './Scene';
 
 export default ResetBoard;

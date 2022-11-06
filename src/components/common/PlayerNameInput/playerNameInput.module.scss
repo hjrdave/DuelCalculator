@@ -1,0 +1,21 @@
+@use '../../styles/variables.scss' as *;
+
+.compContainer {}
+
+.control {
+    height: 5.5rem;
+    font-size: 4rem;
+    background-color: $background-dark;
+    border: 3px solid $background;
+    font-family: $font-calc;
+    color: #fff;
+    text-shadow: $font-glow-main;
+
+    &:focus {
+        background-color: $background-dark;
+        color: #fff;
+        border: 2px solid #4d4dff;
+        outline: none;
+        box-shadow: 0 0 40px #4d4dff;
+    }
+}

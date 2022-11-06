@@ -1,26 +1,20 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Content from '../../common/Content';
 import Player from '../../common/Player';
 import UtilityBar from '../../common/UtilityBar';
-import { useAppStore } from '../../Store';
+import useDuelBoard from '../../hooks/use-duelboard';
 
 function Scene() {
 
-    const [{ playerData }, Store, Util] = useAppStore();
+    const board = useDuelBoard();
 
-    //makes sure previous and current lifepoints are sync so counts don't activate everytime pages changes
+    //makes sure previous and current lifepoints are in sync so 
+    //counts don't activate everytime pages changes
     React.useEffect(() => {
         return (() => {
-            const updatedData = playerData.map((player) => {
-                return {
-                    ...player,
-                    prevLifePoints: player.lifePoints,
-                    lifePoints: player.lifePoints
-                }
-            });
-            Store.update(Util.actions.updatePlayerData, updatedData);
-        })
+            board.preventLifePointCount();
+        });
     }, []);
 
     return (
@@ -30,7 +24,7 @@ function Scene() {
                     <Col className='d-flex flex-column justify-content-center'>
                         <Row className='d-flex justify-content-center'>
                             {
-                                playerData.map((item, index) => {
+                                board.playerData.map((item, index) => {
                                     return (
                                         <React.Fragment key={index}>
                                             <Col xs='5'>
