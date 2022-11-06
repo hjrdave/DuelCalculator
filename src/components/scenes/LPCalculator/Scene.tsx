@@ -20,7 +20,7 @@ export default function Scene() {
             <Content className={`d-flex flex-column justify-content-center`}>
                 <Row className='d-flex justify-content-center'>
                     <Col xs={10} className='d-flex justify-content-center'>
-                        <h1 className={styles.playerName}>Player: {board.getPlayerName()}</h1>
+                        <h1 className={styles.playerName}>{board.getPlayerName()}</h1>
                     </Col>
                 </Row>
                 <Row className='d-flex justify-content-center'>

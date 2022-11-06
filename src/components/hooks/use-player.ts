@@ -3,7 +3,7 @@ import { useAppStore } from '../Store';
 import { DuelBoard } from '../../interfaces';
 
 interface IOptions {
-    activePlayer?: number;
+    activePlayerNumber?: number;
 }
 const usePlayer = (options?: IOptions) => {
 
@@ -20,10 +20,12 @@ const usePlayer = (options?: IOptions) => {
 
     //Makes sure active player is set by page route params on mount
     React.useEffect(() => {
-        if (options?.activePlayer !== undefined) {
-            setActivePlayer(playerData?.filter((player) => (player?.number === options?.activePlayer))[0]);
+        if (options?.activePlayerNumber !== undefined) {
+            const player = playerData?.find((player) => (player?.number === options?.activePlayerNumber));
+            //alert(player?.name)
+            setActivePlayer(player);
         }
-    }, [options?.activePlayer]);
+    }, [options?.activePlayerNumber]);
 
     //Resets all Lifepoints to default
     const resetLifePoints = () => {
@@ -45,9 +47,13 @@ const usePlayer = (options?: IOptions) => {
 
     //Get player name by number
     const getPlayerName = (playerNumber?: number) => {
-        const number = (activePlayer !== undefined) ? activePlayer?.number : playerNumber;
-        const name = playerData.find((player) => (player?.number === number))?.name;
-        return name;
+        if (playerNumber) {
+            const name = playerData.find((player) => (player?.number === playerNumber))?.name;
+            return name;
+        } else {
+            return activePlayer?.name
+        }
+
     };
 
     //Sets player name by number

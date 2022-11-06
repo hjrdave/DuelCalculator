@@ -9,11 +9,11 @@ import useDuelBoard from '../../hooks/use-duelboard';
 
 export default function Scene() {
 
+    //duel board default player number params causing issues having to manually set. Need to look into this.
     const params = useParams<DuelBoard.RouteParams>();
-    const board = useDuelBoard({
-        activePlayer: params.playerNumber
-    });
-    const [name, setName] = React.useState(board.getPlayerName() || `Player ${params.playerNumber}`);
+    const board = useDuelBoard();
+    const playerNumber = Number(params.playerNumber);
+    const [name, setName] = React.useState(board.getPlayerName(playerNumber) || `Player ${playerNumber}`);
 
     return (
         <>
@@ -30,7 +30,7 @@ export default function Scene() {
                             />
                         </div>
                         <div>
-                            <ConfirmBtns confirmLabel='Save' onConfirm={() => { board.setPlayerName(name); board.goToHome() }} />
+                            <ConfirmBtns confirmLabel='Save' onConfirm={() => { board.setPlayerName(name, playerNumber); board.goToHome() }} />
                         </div>
                     </Col>
                 </Row>

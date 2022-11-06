@@ -17,9 +17,9 @@ const useDuelBoard = (options?: IOptions) => {
     const number = (options?.activePlayer !== undefined) ? (typeof options.activePlayer === 'string') ? Number.parseInt(options?.activePlayer) : options.activePlayer : options?.activePlayer;
 
     //sets active player from passed params
-    const [activePlayer, setActivePlayer] = React.useState<number | undefined>(number);
+    const [activePlayerNumber, setActivePlayerNumber] = React.useState<number | undefined>(number);
     React.useEffect(() => {
-        setActivePlayer(number);
+        setActivePlayerNumber(number);
     }, [number]);
 
     /**Coin Toss methods */
@@ -34,7 +34,7 @@ const useDuelBoard = (options?: IOptions) => {
         getPrevLifePoints,
         loseLifePoints,
         gainLifePoints
-    } = usePlayer({ activePlayer: activePlayer });
+    } = usePlayer({ activePlayerNumber: activePlayerNumber });
 
     const {
         onCoinToss,
