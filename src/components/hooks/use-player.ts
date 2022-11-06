@@ -63,7 +63,7 @@ const usePlayer = (options?: IOptions) => {
             if (player.number === number) {
                 return {
                     ...player,
-                    name: newName
+                    name: (newName.length > 0) ? newName : `Player ${number}`
                 };
             } else {
                 return player;

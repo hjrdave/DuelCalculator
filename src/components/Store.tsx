@@ -32,13 +32,13 @@ const Store = createStore([
         state: {
             playerData: [
                 {
-                    name: 'player 1',
+                    name: 'Player 1',
                     number: 1,
                     lifePoints: 8000,
                     prevLifePoints: 8000
                 },
                 {
-                    name: 'player 2',
+                    name: 'Player 2',
                     number: 2,
                     lifePoints: 8000,
                     prevLifePoints: 8000
