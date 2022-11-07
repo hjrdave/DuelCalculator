@@ -24,74 +24,23 @@ const useDuelBoard = (options?: IOptions) => {
     }, [number]);
 
     /**Coin Toss methods */
-    const {
-        playerData,
-        playerAmount,
-        resetLifePoints,
-        preventLifePointCount,
-        getPlayerName,
-        setPlayerName,
-        getLifePoints,
-        getPrevLifePoints,
-        loseLifePoints,
-        gainLifePoints
-    } = usePlayer({ activePlayerNumber: activePlayerNumber });
+    const player = usePlayer({ activePlayerNumber: activePlayerNumber });
 
-    const {
-        onCoinToss,
-        tossCoin,
-        coinFace,
-        rotateCoin
-    } = useCoinToss();
+    const coinToss = useCoinToss();
 
-    const {
-        onDiceRoll,
-        tossDice,
-        diceSide
-    } = useDiceRoll();
+    const dice = useDiceRoll();
 
-    const {
-        goToHome,
-        goToDiceRoll,
-        goToCoinToss,
-        goToBoardReset,
-        goToCalc,
-        goToPlayerName,
-        goToSettings
-    } = useNavigation();
+    const nav = useNavigation();
 
-    const {
-        toggleFullscreen,
-        isFullScreen
-    } = useHeader();
+    const header = useHeader();
 
     return {
-        playerData,
-        playerAmount,
-        resetLifePoints,
-        preventLifePointCount,
-        getLifePoints,
-        getPrevLifePoints,
-        getPlayerName,
-        setPlayerName,
-        loseLifePoints,
-        gainLifePoints,
-        goToHome,
-        goToBoardReset,
-        goToCoinToss,
-        goToDiceRoll,
-        goToCalc,
-        goToPlayerName,
-        goToSettings,
-        onCoinToss,
-        tossCoin,
-        coinFace,
-        rotateCoin,
-        onDiceRoll,
-        tossDice,
-        diceSide,
-        toggleFullscreen,
-        isFullScreen
+        ...player,
+        ...nav,
+        ...coinToss,
+        ...dice,
+        ...header
+
     }
 };
 

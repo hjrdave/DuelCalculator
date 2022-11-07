@@ -31,6 +31,10 @@ const useNavigation = () => {
         navigate(`/settings`)
     };
 
+    const goToAbout = () => {
+        navigate(`/about`)
+    };
+
     return {
         goToHome,
         goToDiceRoll,
@@ -38,7 +42,8 @@ const useNavigation = () => {
         goToBoardReset,
         goToCalc,
         goToPlayerName,
-        goToSettings
+        goToSettings,
+        goToAbout
     }
 };
 
