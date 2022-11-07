@@ -1,3 +1,3 @@
-import ResetBoard from './Scene';
+import Scene from './Scene';
 
-export default ResetBoard;
+export default Scene;

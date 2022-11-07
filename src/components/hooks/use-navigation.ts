@@ -26,13 +26,19 @@ const useNavigation = () => {
     const goToPlayerName = (playerNumber: number) => {
         navigate(`/player-name/${playerNumber}`)
     };
+
+    const goToSettings = () => {
+        navigate(`/settings`)
+    };
+
     return {
         goToHome,
         goToDiceRoll,
         goToCoinToss,
         goToBoardReset,
         goToCalc,
-        goToPlayerName
+        goToPlayerName,
+        goToSettings
     }
 };
 

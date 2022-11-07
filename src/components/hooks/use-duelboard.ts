@@ -3,6 +3,7 @@ import useNavigation from './use-navigation';
 import useCoinToss from './use-coin-toss';
 import useDiceRoll from './use-dice-roll';
 import usePlayer from './use-player';
+import useHeader from './use-header';
 interface IOptions {
     activePlayer?: '1' | '2' | '3' | '4' | 1 | 2 | 3 | 4;
 }
@@ -55,8 +56,14 @@ const useDuelBoard = (options?: IOptions) => {
         goToCoinToss,
         goToBoardReset,
         goToCalc,
-        goToPlayerName
+        goToPlayerName,
+        goToSettings
     } = useNavigation();
+
+    const {
+        toggleFullscreen,
+        isFullScreen
+    } = useHeader();
 
     return {
         playerData,
@@ -75,13 +82,16 @@ const useDuelBoard = (options?: IOptions) => {
         goToDiceRoll,
         goToCalc,
         goToPlayerName,
+        goToSettings,
         onCoinToss,
         tossCoin,
         coinFace,
         rotateCoin,
         onDiceRoll,
         tossDice,
-        diceSide
+        diceSide,
+        toggleFullscreen,
+        isFullScreen
     }
 };
 

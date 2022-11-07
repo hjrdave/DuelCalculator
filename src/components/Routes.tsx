@@ -7,6 +7,7 @@ import { default as DiceRoll } from './scenes/DiceRoll';
 import { default as LPCalculator } from './scenes/LPCalculator';
 import { default as PlayerName } from './scenes/PlayerName';
 import { default as ResetBoard } from './scenes/ResetBoard';
+import { default as Settings } from './scenes/Settings';
 
 export default function Routes() {
 
@@ -18,6 +19,7 @@ export default function Routes() {
         <Route path={'/coin-toss'} element={<CoinToss />} />
         <Route path={'/dice-roll'} element={<DiceRoll />} />
         <Route path={'/reset-board'} element={<ResetBoard />} />
+        <Route path={'/settings'} element={<Settings />} />
         <Route path={'/lp-calculator/:operator/:playerNumber'} element={<LPCalculator />} />
         <Route path={'/player-name/:playerNumber'} element={<PlayerName />} />
       </Route>

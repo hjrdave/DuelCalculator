@@ -1,81 +1,23 @@
 import React from 'react';
-import { Offcanvas, Navbar } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import useDuelBoard from '../../hooks/use-duelboard';
 import styles from './header.module.scss';
 
-interface IDocument {
-    exitFullscreen?: any;
-    mozCancelFullScreen?: any;
-    webkitExitFullscreen?: any;
-    fullscreenElement?: any;
-    mozFullScreenElement?: any;
-    webkitFullscreenElement?: any;
-    msFullscreenElement?: any;
-    documentElement?: any;
-    msExitFullscreen?: any;
-}
+
 
 export default function Header() {
 
     const board = useDuelBoard();
 
-    const [fullscreenIcon, setFullscreenIcon] = React.useState('fa-expand');
-
-    const ToggleFullscreen = () => {
-        const doc: IDocument = document;
-        const isInFullScreen = (doc.fullscreenElement && doc.fullscreenElement !== null) ||
-            (doc.webkitFullscreenElement && doc.webkitFullscreenElement !== null) ||
-            (doc.mozFullScreenElement && doc.mozFullScreenElement !== null) ||
-            (doc.msFullscreenElement && doc.msFullscreenElement !== null);
-
-        const docElm = doc.documentElement;
-        if (!isInFullScreen) {
-            if (docElm.requestFullscreen) {
-                docElm.requestFullscreen();
-            } else if (docElm.mozRequestFullScreen) {
-                docElm.mozRequestFullScreen();
-            } else if (docElm.webkitRequestFullScreen) {
-                docElm.webkitRequestFullScreen();
-            } else if (docElm.msRequestFullscreen) {
-                docElm.msRequestFullscreen();
-            }
-            setFullscreenIcon("fa-compress-arrows-alt");
-        } else {
-            if (doc.exitFullscreen) {
-                doc.exitFullscreen();
-            } else if (doc.webkitExitFullscreen) {
-                doc.webkitExitFullscreen();
-            } else if (doc.mozCancelFullScreen) {
-                doc.mozCancelFullScreen();
-            } else if (doc.msExitFullscreen) {
-                doc.msExitFullscreen();
-            }
-            setFullscreenIcon("fa-expand");
-        }
-    }
-
-    const [showSettings, setShowSettings] = React.useState(false);
-
-    const openSettingsMenu = () => setShowSettings(true);
-    const closeSettingsMenu = () => setShowSettings(false);
-
     return (
         <>
             <Navbar className={`${styles.header} d-flex justify-content-between`}>
                 <Navbar.Text className={`px-3 ${styles.navbarText}`}>
-                    <i className={`fas fa-cog cursor ${styles.settingsIcon}`} onClick={() => openSettingsMenu()}></i>
+                    <i className={`fas fa-cog cursor ${styles.settingsIcon}`} onClick={board.goToSettings}></i>
                 </Navbar.Text>
                 <Navbar.Brand className={styles.navbarBrand} onClick={board.goToHome}><div>DuelCalculator.js</div></Navbar.Brand>
-                <Navbar.Text className={`px-3 ${styles.navbarText}`} onClick={() => ToggleFullscreen()}><i className={`fas ${fullscreenIcon} ${styles.fullScreenIcon} cursor`}></i></Navbar.Text>
+                <Navbar.Text className={`px-3 ${styles.navbarText}`} onClick={() => board.toggleFullscreen()}><i className={`fas ${(board.isFullScreen) ? 'fa-compress-arrows-alt' : 'fa-expand'} ${styles.fullScreenIcon} cursor`}></i></Navbar.Text>
             </Navbar>
-            <Offcanvas show={showSettings} onHide={closeSettingsMenu} >
-                <Offcanvas.Header closeButton className={`${styles.settingsMenu}`}>
-                    <Offcanvas.Title>Settings</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body className={styles.settingsMenu}>
-
-                </Offcanvas.Body>
-            </Offcanvas>
         </>
     )
 }
