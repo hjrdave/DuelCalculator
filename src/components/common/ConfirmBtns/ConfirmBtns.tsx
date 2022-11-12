@@ -4,9 +4,9 @@ import { Button } from 'react-bootstrap';
 import styles from './confirmBtns.module.scss';
 
 interface Props {
-    confirmLabel: string;
+    confirmLabel?: string;
     cancelLabel?: string;
-    onConfirm: () => void;
+    onConfirm?: () => void;
     onCancel?: () => void;
 }
 
@@ -26,8 +26,11 @@ export default function ConfirmBtns({ onCancel: _onCancel, onConfirm, confirmLab
         <>
             <div className='d-flex justify-content-center pt-4'>
                 <div className='mt-4'>
-                    <Button className={`me-2 px-4 ${styles.button}`} onClick={onConfirm}>{confirmLabel || 'Confirm'}</Button>
-                    <Button className={`ms-2 px-4 ${styles.button}`} onClick={onCancel}>{cancelLabel || 'Close'}</Button>
+                    {
+                        (onConfirm) ?
+                            <Button className={`me-2 px-4 ${styles.button}`} onClick={onConfirm}>{confirmLabel || 'Confirm'}</Button> : null
+                    }
+                    <Button className={`${(onConfirm) ? 'ms-2' : ''} px-4 ${styles.button}`} onClick={onCancel}>{cancelLabel || 'Close'}</Button>
                 </div>
             </div>
         </>

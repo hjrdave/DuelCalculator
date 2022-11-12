@@ -4,6 +4,7 @@ import useCoinToss from './use-coin-toss';
 import useDiceRoll from './use-dice-roll';
 import usePlayer from './use-player';
 import useHeader from './use-header';
+import useSettings from './use-settings';
 interface IOptions {
     activePlayer?: '1' | '2' | '3' | '4' | 1 | 2 | 3 | 4;
 }
@@ -34,13 +35,15 @@ const useDuelBoard = (options?: IOptions) => {
 
     const header = useHeader();
 
+    const settings = useSettings();
+
     return {
         ...player,
         ...nav,
         ...coinToss,
         ...dice,
-        ...header
-
+        ...header,
+        ...settings
     }
 };
 

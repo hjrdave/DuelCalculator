@@ -1,0 +1,9 @@
+.compContainer {
+    p: {
+        font-size: 1rem;
+    }
+
+    &:global('.form-check-input') {
+        width: 4rem !important;
+    }
+}

@@ -2,33 +2,33 @@ import { createStore, useTreble, TrebleGSM } from 'treble-gsm';
 import { DuelBoard } from '../interfaces';
 
 export interface IState {
-    settingsMenuState: boolean;
     playerAmount: number;
     playerData: DuelBoard.PlayerData[];
+    isAnimatedBKEnabled: boolean;
 }
 
 const actionKeys = {
-    ['updateSettingsMenuState']: 'updateSettingsMenuState',
     ['updatePlayerAmount']: 'updatePlayerAmount',
-    ['updatePlayerData']: 'updatePlayerData'
+    ['updatePlayerData']: 'updatePlayerData',
+    ['enableAnimatedBK']: 'enableAnimatedBK'
 }
 type TActions = typeof actionKeys;
 
 const Store = createStore([
     {
-        action: 'updateSettingsMenuState',
-        state: {
-            settingsMenuState: false
-        }
-    },
-    {
-        action: 'updatePlayerAmount',
+        action: actionKeys.updatePlayerAmount,
         state: {
             playerAmount: 2
         }
     },
     {
-        action: 'updatePlayerData',
+        action: actionKeys.enableAnimatedBK,
+        state: {
+            isAnimatedBKEnabled: true
+        }
+    },
+    {
+        action: actionKeys.updatePlayerData,
         state: {
             playerData: [
                 {
