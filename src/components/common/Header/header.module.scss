@@ -3,6 +3,7 @@
 .header {
     background-color: $background-dark;
     height: $header-height;
+    z-index: 2;
 
     .navbarBrand {
         color: white;

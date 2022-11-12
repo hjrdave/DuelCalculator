@@ -33,10 +33,16 @@ export default function Calculator({ lifePoints, operatorType, onCancel, onEnter
     setUserInput(newValue);
   }
 
+  const [fadeIn, setFadeIn] = React.useState(false);
+
+  React.useEffect(() => {
+    setFadeIn(true);
+  }, []);
+
   return (
     <>
 
-      <div className={`${styles.compContainer} row pt-4 pb-4 d-flex justify-content-around`}>
+      <div className={`${styles.compContainer} ${(fadeIn) ? styles.fadeIn : ''} row pt-4 pb-4 d-flex justify-content-around`}>
         <Col>
           <Row>
             <Col sm={12} className={'p-0'}>
@@ -61,8 +67,10 @@ export default function Calculator({ lifePoints, operatorType, onCancel, onEnter
           </Row>
         </Col>
         <Col sm={4} className={'d-flex flex-column'}>
-          <KeyBtn size={12} label={'Cancel'} value={'cancel'} alignLabel={'left'} icon={<i className="fa-solid fa-xmark"></i>} onClick={onCancel} />
-          <KeyBtn size={12} label={'Clear'} value={'clear'} alignLabel={'left'} icon={<i className="fa-solid fa-rotate-left"></i>} onClick={onClear} />
+          <div className={'d-flex'}>
+            <KeyBtn size={6} label={'Clear'} value={'clear'} alignLabel={'left'} icon={<i className="fa-solid fa-rotate-left"></i>} onClick={onClear} />
+            <KeyBtn size={6} label={'Cancel'} value={'cancel'} alignLabel={'left'} icon={<i className="fa-solid fa-xmark"></i>} onClick={onCancel} />
+          </div>
           <KeyBtn size={12} label={'Backspace'} value={'backSpace'} alignLabel={'left'} icon={<i className="fa-solid fa-delete-left"></i>} onClick={onBackSpace} />
           <KeyBtn size={12} label={'Enter'} value={'enter'} alignLabel={'left'} icon={<i className="fa-solid fa-arrow-turn-down ps-2" style={{ transform: 'rotate(90deg)' }}></i>} onClick={() => onEnter(userInput)} className={'flex-grow-1'} />
         </Col>

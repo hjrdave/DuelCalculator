@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
 import Header from './common/Header';
 import Backdrop from './common/Backdrop';
+import Particles from './common/Particles';
 import Treble from 'treble-gsm';
 
 import Store from './Store';
@@ -18,7 +19,10 @@ const App: React.FC = () => {
             <div className='page-container'>
               <Header />
               <Backdrop>
-                <Routes />
+                <div style={{ zIndex: 1, width: '100%' }}>
+                  <Routes />
+                </div>
+                <Particles />
               </Backdrop>
             </div>
           </Router>

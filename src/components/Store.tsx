@@ -24,7 +24,7 @@ const Store = createStore([
     {
         action: actionKeys.enableAnimatedBK,
         state: {
-            isAnimatedBKEnabled: true
+            isAnimatedBKEnabled: false
         }
     },
     {

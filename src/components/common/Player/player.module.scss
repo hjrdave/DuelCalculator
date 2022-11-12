@@ -1,6 +1,10 @@
-@use '../../styles/variables'as *;
+@use '../../styles/variables' as *;
 
 .player {
+    transform: scale(.75);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+
     .playerName {
         p {
             font-size: $font-size-base + 1;
@@ -36,4 +40,9 @@
             font-size: $font-size-base + 2;
         }
     }
+}
+
+.fadeIn {
+    transform: scale(1);
+    opacity: 1;
 }

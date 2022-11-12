@@ -11,9 +11,15 @@ interface Props {
 }
 export default function Player({ number, name, lifePoints, prevLifePoints }: Props) {
 
+    const [fadeIn, setFadeIn] = React.useState(false);
+
+    React.useEffect(() => {
+        setFadeIn(true);
+    }, []);
+
     return (
         <>
-            <div className={`${styles.player} ${styles.playerCardSmall} glow m-4`}>
+            <div className={`${styles.player} ${styles.playerCardSmall} ${(fadeIn) ? styles.fadeIn : ''} glow m-4`}>
                 <div className={`${styles.playerName} pt-3 d-flex justify-content-between`}>
                     <p className='ps-4'><Link to={`/lp-calculator/add/${number}`}><i className="fas fa-plus"></i></Link></p>
                     <p><Link style={{ textDecoration: 'none' }} to={`/player-name/${number}`}>{name}</Link></p>
