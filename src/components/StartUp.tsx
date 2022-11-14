@@ -7,7 +7,7 @@ export default function StartUp() {
 
     React.useEffect(() => {
         if (board.playerAmount > 2) {
-            const newPlayerData = [...board.playerData, { ...board.playerData[0], number: 3 }];
+            const newPlayerData = [...board.playerData, { ...board.playerData[0], name: 'Player 3', number: 3 }];
             board.setPlayerData(newPlayerData);
         } else {
             const newPlayerData = [board.playerData[0], board.playerData[1]];
