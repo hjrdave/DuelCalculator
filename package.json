@@ -31,7 +31,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy:github": "react-scripts build --prefix-paths && gh-pages -f -d public -b gh-pages"
   },
   "eslintConfig": {
     "extends": "react-app"
