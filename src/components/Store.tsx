@@ -35,13 +35,15 @@ const Store = createStore([
                     name: 'Player 1',
                     number: 1,
                     lifePoints: 8000,
-                    prevLifePoints: 8000
+                    prevLifePoints: 8000,
+                    hitZero: false
                 },
                 {
                     name: 'Player 2',
                     number: 2,
                     lifePoints: 8000,
-                    prevLifePoints: 8000
+                    prevLifePoints: 8000,
+                    hitZero: false
                 }
             ]
         }

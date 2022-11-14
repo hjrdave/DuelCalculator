@@ -6,6 +6,7 @@ export declare namespace DuelBoard {
         number: number;
         lifePoints: number;
         prevLifePoints: number;
+        hitZero: boolean;
     }
     interface RouteParams extends Params {
         operator: 'minus' | 'add';

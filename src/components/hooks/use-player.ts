@@ -122,9 +122,13 @@ const usePlayer = (options?: IOptions) => {
         Store.update(Util.actions.updatePlayerData, updatePlayerData);
     };
 
+    //Who hit zero
+    const hitZero = playerData.filter((player) => player.lifePoints === 0).map((player) => (player.number));
+
     return {
         playerData,
         playerAmount,
+        hitZero,
         resetLifePoints,
         preventLifePointCount,
         getPlayerName,

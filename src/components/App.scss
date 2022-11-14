@@ -35,6 +35,20 @@
         box-shadow: 0 0 40px #4d4dff;
     }
 
+    .glow-red {
+        border: 2px solid #ff0101;
+        border-radius: 7px;
+        outline: none;
+        box-shadow: 0 0 40px #ff0101;
+    }
+
+    .glow-green {
+        border: 2px solid #39ff14;
+        border-radius: 7px;
+        outline: none;
+        box-shadow: 0 0 40px #39ff14;
+    }
+
     .text-glow-green {
         text-shadow: $font-glow-green;
     }
