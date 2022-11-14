@@ -24,14 +24,14 @@ export default function Player({ number, name, lifePoints, prevLifePoints }: Pro
     return (
         <>
             <Animate type={'fadeIn'}>
-                <div className={`${styles.player} ${styles.playerCardSmall} ${(hitZero) ? 'glow-red' : 'glow'} m-4`}>
+                <div className={`${styles.player} ${(hitZero) ? 'glow-red' : 'glow'} m-4`}>
                     <div className={`${styles.playerName} pt-3 d-flex justify-content-between`}>
                         <p className='ps-4'><Link to={`/lp-calculator/add/${number}`}><i className="fas fa-plus"></i></Link></p>
                         <p><Link style={{ textDecoration: 'none' }} to={`/player-name/${number}`}>{name}</Link></p>
                         <p className='pe-4'><Link to={`/lp-calculator/minus/${number}`}><i className="fas fa-minus"></i></Link></p>
                     </div>
                     <div className={`${styles.playerCard} d-flex justify-content-center`}>
-                        <p>
+                        <p className={(board.playerAmount > 2) ? styles.smallCount : styles.count}>
                             <CountUp
                                 start={prevLifePoints}
                                 end={lifePoints}

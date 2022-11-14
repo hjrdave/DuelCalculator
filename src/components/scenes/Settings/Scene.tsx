@@ -24,6 +24,13 @@ export default function Scene() {
                                 onChange={board.enableAnimatedBK}
                             />
                         </div>
+                        <div className={'pt-4'}>
+                            <Switch
+                                label={'Enable 3 Player Mode'}
+                                checked={(board.playerAmount > 2) ? true : false}
+                                onChange={(value) => (value) ? board.setPlayerAmount(3) : board.setPlayerAmount(2)}
+                            />
+                        </div>
                         <div>
                             <ConfirmBtns onCancel={() => { board.goToHome() }} />
                         </div>

@@ -5,6 +5,7 @@ import Routes from './Routes';
 import Header from './common/Header';
 import Backdrop from './common/Backdrop';
 import Particles from './common/Particles';
+import StartUp from './StartUp';
 import Treble from 'treble-gsm';
 
 import Store from './Store';
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <div className='d-flex'>
           <Router basename={"/"}>
             <div className='page-container'>
+              <StartUp />
               <Header />
               <Backdrop>
                 <div style={{ zIndex: 1, width: '100%' }}>

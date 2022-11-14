@@ -125,6 +125,11 @@ const usePlayer = (options?: IOptions) => {
     //Who hit zero
     const hitZero = playerData.filter((player) => player.lifePoints === 0).map((player) => (player.number));
 
+    //adds players
+    const setPlayerData = (playerData: DuelBoard.PlayerData[]) => {
+        Store.update(Util.actions.updatePlayerData, playerData)
+    }
+
     return {
         playerData,
         playerAmount,
@@ -136,7 +141,8 @@ const usePlayer = (options?: IOptions) => {
         getLifePoints,
         getPrevLifePoints,
         loseLifePoints,
-        gainLifePoints
+        gainLifePoints,
+        setPlayerData
     }
 };
 

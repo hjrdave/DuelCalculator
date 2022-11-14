@@ -1,15 +1,21 @@
 import { useAppStore } from "../Store";
 
 const useSettings = () => {
-    const [{ isAnimatedBKEnabled }, Store, Utils] = useAppStore();
+    const [{ isAnimatedBKEnabled }, Store, Util] = useAppStore();
 
     const enableAnimatedBK = (isEnabled: boolean) => {
-        Store.update(Utils.actions.enableAnimatedBK, isEnabled);
+        Store.update(Util.actions.enableAnimatedBK, isEnabled);
+    }
+
+    //sets player amount
+    const setPlayerAmount = (amount: number) => {
+        Store.update(Util.actions.updatePlayerAmount, amount);
     }
 
     return {
         isAnimatedBKEnabled,
-        enableAnimatedBK
+        enableAnimatedBK,
+        setPlayerAmount
     }
 
 };

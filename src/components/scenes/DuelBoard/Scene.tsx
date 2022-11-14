@@ -27,7 +27,7 @@ function Scene() {
                                 board.playerData.map((item, index) => {
                                     return (
                                         <React.Fragment key={index}>
-                                            <Col xs='5'>
+                                            <Col xs={(board.playerAmount > 2) ? '4' : '5'}>
                                                 <Player
                                                     name={item.name}
                                                     number={item.number}
