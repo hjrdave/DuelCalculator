@@ -1,0 +1,14 @@
+.compContainer {
+    width: 100%;
+}
+
+.fadeInDefault {
+    transform: scale(.75);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+}
+
+.fadeIn {
+    transform: scale(1);
+    opacity: 1;
+}

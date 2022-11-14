@@ -1,13 +1,7 @@
 //Duel Calculator Styles
 @use '../../styles/variables.scss' as *;
 
-.compContainer {
-    //opacity: 0;
-    //transform: scale(.9);
-    transform: scale(.75);
-    opacity: 0;
-    transition: transform .3s, opacity .3s;
-}
+.compContainer {}
 
 .calcNumbers {
     div {
@@ -32,23 +26,6 @@
     p {
         margin: 0px;
         padding: 10px;
-        //font-size: $font-size-base + 2;
         font-size: 2.85rem;
     }
 }
-
-.fadeIn {
-    transform: scale(1);
-    opacity: 1;
-}
-
-// .calcScore {
-//     p {
-//         margin: 0px;
-//         padding: 0px;
-//         font-family: $font-calc;
-//         font-size: $font-size-base + 4;
-//         color: #fff;
-//         text-shadow: $font-glow-main
-//     }
-// }
