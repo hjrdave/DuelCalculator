@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/DuelCalculator/static/css/main.4c747de8.css",
+    "main.js": "/DuelCalculator/static/js/main.3b1a895e.js",
+    "static/media/spacetext-bold-webfont.ttf": "/DuelCalculator/static/media/spacetext-bold-webfont.288a7a81a25abac95bc7.ttf",
+    "static/media/digital-7.ttf": "/DuelCalculator/static/media/digital-7.93911ab167c943140756.ttf",
+    "static/media/bk-futuristic-rings.svg": "/DuelCalculator/static/media/bk-futuristic-rings.8c4b1a0331045a56ff0b.svg",
+    "index.html": "/DuelCalculator/index.html",
+    "main.4c747de8.css.map": "/DuelCalculator/static/css/main.4c747de8.css.map",
+    "main.3b1a895e.js.map": "/DuelCalculator/static/js/main.3b1a895e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c747de8.css",
+    "static/js/main.3b1a895e.js"
+  ]
+}
