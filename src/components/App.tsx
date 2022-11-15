@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <Treble store={Store}>
       <div className="App">
         <div className='d-flex'>
-          <Router basename={"/"}>
+          <Router basename={"/DuelCalculator"}>
             <div className='page-container'>
               <StartUp />
               <Header />
