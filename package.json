@@ -1,56 +1,45 @@
 {
   "name": "duelcalculator.js",
-  "version": "2.0.0",
   "private": true,
+  "version": "3.0.0",
+  "type": "module",
   "homepage": "https://hjrdave.github.io/DuelCalculator",
-  "dependencies": {
-    "@types/node": "^12.20.16",
-    "@types/react": "^16.14.32",
-    "@types/react-bootstrap": "^0.32.31",
-    "@types/react-countup": "^4.3.1",
-    "@types/react-dom": "^16.9.16",
-    "@types/react-router-dom": "^5.3.3",
-    "acorn": "^7.4.1",
-    "acorn-dynamic-import": "^4.0.0",
-    "bootstrap": "^5.2.2",
-    "node-sass": "npm:sass@^1.35.2",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
-    "react-countup": "^4.4.0",
-    "react-dom": "^18.2.0",
-    "react-particles": "^2.5.3",
-    "react-router-dom": "^6.4.2",
-    "react-router-treble": "^2.0.2",
-    "react-scripts": "^5.0.1",
-    "react-spring": "^9.5.5",
-    "treble-fetch": "^1.0.0-beta.17",
-    "treble-gsm": "^4.0.0",
-    "tsparticles": "^2.5.3",
-    "tsparticles-engine": "^2.5.2",
-    "typescript": "^4.8.4",
-    "uniqid": "^5.3.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "github: deploy": "npm run build && gh-pages -d build"
+    "dev": "vite",
+    "tsc": "tsc --watch",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@sandstack/neuron": "^0.0.0-alpha.25",
+    "bootstrap": "^5.3.2",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.1",
+    "react-dom": "^18.2.0",
+    "react-particles": "^2.12.2",
+    "react-router": "^6.20.1",
+    "react-router-dom": "^6.20.1",
+    "react-spring": "^9.7.3",
+    "sass": "^1.69.5",
+    "treble-gsm": "^4.1.8",
+    "tsparticles": "^2.12.0",
+    "tsparticles-engine": "^2.12.0",
+    "uniqid": "^5.4.0"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "@types/react": "^18.2.37",
+    "@types/react-bootstrap": "^0.32.31",
+    "@types/react-countup": "^4.3.1",
+    "@types/react-dom": "^18.2.15",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
   }
 }
