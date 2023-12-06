@@ -1,38 +1,34 @@
-@use '../../styles/variables' as *;
+@use "../../variables.scss" as *;
 
 .player {
+  .playerName {
+    p {
+      font-size: $font-size-base + 1;
+      color: #fff;
+      text-shadow: $font-glow-main;
 
+      i {
+        cursor: pointer;
+        transition: opacity 0.3s;
 
-    .playerName {
-        p {
-            font-size: $font-size-base + 1;
-            color: #fff;
-            text-shadow: $font-glow-main;
-
-            i {
-                cursor: pointer;
-                transition: opacity .3s;
-
-                &:hover {
-                    opacity: .5;
-                }
-            }
-
+        &:hover {
+          opacity: 0.5;
         }
+      }
     }
-
+  }
 }
 
 .count {
-    font-size: $font-size-base + 10;
-    font-family: $font-calc;
-    color: #fff;
-    text-shadow: $font-glow-main;
+  font-size: $font-size-base + 10;
+  font-family: $font-calc;
+  color: #fff;
+  text-shadow: $font-glow-main;
 }
 
 .smallCount {
-    font-family: $font-calc;
-    color: #fff;
-    text-shadow: $font-glow-main;
-    font-size: $font-size-base + 6;
+  font-family: $font-calc;
+  color: #fff;
+  text-shadow: $font-glow-main;
+  font-size: $font-size-base + 6;
 }

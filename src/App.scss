@@ -2,10 +2,9 @@
 @use "../node_modules/bootstrap/scss/bootstrap.scss";
 
 //variables
-@use "./styles/variables.scss" as *;
+@use "./variables.scss" as *;
 
 //fonts
-@use "./styles/fonts.scss";
 
 .App {
   height: 100vh;

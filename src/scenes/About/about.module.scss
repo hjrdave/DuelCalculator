@@ -1,11 +1,11 @@
-@use '../../styles/variables.scss' as *;
+@use "../../variables.scss" as *;
 
 .compContainer {
-    p {
-        font-size: $font-size-base + .2;
-    }
+  p {
+    font-size: $font-size-base + 0.2;
+  }
 
-    i {
-        font-size: 4rem;
-    }
+  i {
+    font-size: 4rem;
+  }
 }

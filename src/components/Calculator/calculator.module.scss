@@ -1,31 +1,32 @@
 //Duel Calculator Styles
-@use '../../styles/variables.scss' as *;
+@use "../../variables.scss" as *;
 
-.compContainer {}
+.compContainer {
+}
 
 .calcNumbers {
-    div {
-        background-color: $background-dark;
-        border: 3px solid $background;
-        transition: background-color .2s;
-        cursor: pointer;
+  div {
+    background-color: $background-dark;
+    border: 3px solid $background;
+    transition: background-color 0.2s;
+    cursor: pointer;
 
-        &:hover {
-            background-color: lighten($background-dark, 3%);
-        }
-
-        p {
-            margin: 0px;
-            padding: 10px;
-            font-size: $font-size-base + .8;
-        }
+    &:hover {
+      background-color: lighten($background-dark, 3%);
     }
+
+    p {
+      margin: 0px;
+      padding: 10px;
+      font-size: $font-size-base + 0.8;
+    }
+  }
 }
 
 .calcClose {
-    p {
-        margin: 0px;
-        padding: 10px;
-        font-size: 2.85rem;
-    }
+  p {
+    margin: 0px;
+    padding: 10px;
+    font-size: 2.85rem;
+  }
 }

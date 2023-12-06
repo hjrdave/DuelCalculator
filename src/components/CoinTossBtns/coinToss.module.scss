@@ -1,8 +1,7 @@
-@use '../../styles/variables'as *;
+@use "../../variables.scss" as *;
 
 .coinTossBtns {
-    color: white;
-    border-color: $background-dark;
-    background-color: $background-dark;
-
+  color: white;
+  border-color: $background-dark;
+  background-color: $background-dark;
 }

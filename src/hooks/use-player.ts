@@ -1,18 +1,14 @@
 import React from "react";
-import { useAppStore } from "../Store";
+import { useNeuron } from "../Store";
 import { DuelBoard } from "../interfaces";
 
 interface IOptions {
   activePlayerNumber?: number;
 }
 const usePlayer = (options?: IOptions) => {
-  const [State, Store, Util] = useAppStore();
-
-  //All player data
-  const playerData = State?.playerData;
-
-  //Amount of players set
-  const playerAmount = State?.playerAmount;
+  // const [State, Store, Util] = useAppStore();
+  const [playerData, setPlayerData] = useNeuron((state) => state.playerData);
+  const [playerAmount] = useNeuron((state) => state.playerAmount);
 
   //Active page player (used when on calculator page or player settings)
   const [activePlayer, setActivePlayer] =
@@ -36,7 +32,7 @@ const usePlayer = (options?: IOptions) => {
       lifePoints: 8000,
       prevLifePoints: 8000,
     }));
-    Store.update(Util.actions.updatePlayerData, playersWithResetScore);
+    setPlayerData(playersWithResetScore);
   };
 
   //Prevents player count up when navigating back to home (syncs lifepoints and prev lifepoints)
@@ -48,7 +44,7 @@ const usePlayer = (options?: IOptions) => {
         lifePoints: player?.lifePoints,
       };
     });
-    Store.update(Util.actions.updatePlayerData, updatedData);
+    setPlayerData(updatedData);
   };
 
   //Get player name by number
@@ -77,7 +73,7 @@ const usePlayer = (options?: IOptions) => {
         return player;
       }
     });
-    Store.update(Util.actions.updatePlayerData, updatePlayerData);
+    setPlayerData(updatePlayerData);
   };
 
   //Get player lifepoints by number
@@ -116,7 +112,7 @@ const usePlayer = (options?: IOptions) => {
         return player;
       }
     });
-    Store.update(Util.actions.updatePlayerData, updatePlayerData);
+    setPlayerData(updatePlayerData);
   };
 
   //Add lifepoints from player by number
@@ -135,18 +131,13 @@ const usePlayer = (options?: IOptions) => {
         return player;
       }
     });
-    Store.update(Util.actions.updatePlayerData, updatePlayerData);
+    setPlayerData(updatePlayerData);
   };
 
   //Who hit zero
   const hitZero = playerData
     .filter((player) => player.lifePoints === 0)
     .map((player) => player.number);
-
-  //adds players
-  const setPlayerData = (playerData: DuelBoard.PlayerData[]) => {
-    Store.update(Util.actions.updatePlayerData, playerData);
-  };
 
   return {
     playerData,

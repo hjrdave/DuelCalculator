@@ -1,23 +1,20 @@
-import { useAppStore } from "../Store";
+import { useNeuron } from "../Store";
 
 const useSettings = () => {
-    const [{ isAnimatedBKEnabled }, Store, Util] = useAppStore();
+  const [, setPlayerAmount] = useNeuron((state) => state.playerAmount);
+  const [isAnimatedBKEnabled, setIsAnimatedBKEnabled] = useNeuron(
+    (state) => state.isAnimatedBKEnabled
+  );
 
-    const enableAnimatedBK = (isEnabled: boolean) => {
-        Store.update(Util.actions.enableAnimatedBK, isEnabled);
-    }
+  const enableAnimatedBK = (isEnabled: boolean) => {
+    setIsAnimatedBKEnabled(isEnabled);
+  };
 
-    //sets player amount
-    const setPlayerAmount = (amount: number) => {
-        Store.update(Util.actions.updatePlayerAmount, amount);
-    }
-
-    return {
-        isAnimatedBKEnabled,
-        enableAnimatedBK,
-        setPlayerAmount
-    }
-
+  return {
+    isAnimatedBKEnabled,
+    enableAnimatedBK,
+    setPlayerAmount,
+  };
 };
 
 export default useSettings;

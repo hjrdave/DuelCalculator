@@ -1,7 +1,7 @@
-@use '../../styles/variables.scss' as *;
+@use "../../variables.scss" as *;
 
 .playerName {
-    font-family: $font-calc;
-    text-shadow: $font-glow-main;
-    font-size: $h1-font-size + 2.5;
+  font-family: $font-calc;
+  text-shadow: $font-glow-main;
+  font-size: $h1-font-size + 2.5;
 }

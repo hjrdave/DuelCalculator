@@ -1,44 +1,42 @@
-@use '../../styles/variables' as *;
+@use "../../variables.scss" as *;
 
 .header {
-    background-color: $background-dark;
-    height: $header-height;
-    z-index: 2;
+  background-color: $background-dark;
+  height: $header-height;
+  z-index: 2;
 
-    .navbarBrand {
-        color: white;
-        font-size: $font-size-base + .75rem;
+  .navbarBrand {
+    color: white;
+    font-size: $font-size-base + 0.75rem;
 
-        a {
-            text-decoration: none;
-        }
-
+    a {
+      text-decoration: none;
     }
+  }
 
-    .navbarText {
-        color: white;
-        font-size: $font-size-base + .4rem;
+  .navbarText {
+    color: white;
+    font-size: $font-size-base + 0.4rem;
 
-        .settingsIcon {
-            color: white !important;
-        }
+    .settingsIcon {
+      color: white !important;
     }
+  }
 
-    .fullScreenIcon {
+  .fullScreenIcon {
+    transition: transform 0.3s;
 
-        transition: transform .3s;
-
-        &:hover {
-            transform: scale(1.3);
-        }
+    &:hover {
+      transform: scale(1.3);
     }
+  }
 }
 
 .settingsMenu {
-    background-color: $background-dark;
-    color: white;
+  background-color: $background-dark;
+  color: white;
 
-    :global(.btn-close) {
-        background-color: white;
-    }
+  :global(.btn-close) {
+    background-color: white;
+  }
 }
