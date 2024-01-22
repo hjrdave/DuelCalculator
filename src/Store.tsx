@@ -1,6 +1,6 @@
-import Neuron from "@sandstack/neuron/react";
-import Devtools from "@sandstack/neuron/modules/devtools";
-import Persist, { PersistProps } from "@sandstack/neuron/modules/persist";
+import { createStore } from "@sandstack/neuron/react";
+import Devtools from "@sandstack/neuron-devtools";
+import { Persist, PersistProps } from "@sandstack/neuron/persist";
 import { DuelBoard } from "./interfaces";
 
 interface IState {
@@ -9,10 +9,7 @@ interface IState {
   isAnimatedBKEnabled: boolean;
 }
 
-export const { State, useNeuron, Module } = Neuron.Store<
-  IState,
-  PersistProps
->();
+export const { State, useNeuron, Module } = createStore<IState, PersistProps>();
 
 export default function Store() {
   return (

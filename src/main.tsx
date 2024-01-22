@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import DevtoolsPanel from "@sandstack/neuron/DevtoolsPanel";
+import DevtoolsPanel from "@sandstack/neuron-devtools";
 import Store from "./Store.tsx";
 import App from "./App.tsx";
 
