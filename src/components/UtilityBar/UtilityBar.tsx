@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 import styles from "./utilityBar.module.scss";
 
 export default function UtilityBar() {

@@ -1,10 +1,9 @@
-import { useNeuron } from "../Store";
+import { usePlayerAmount, useIsAnimatedBKEnabled } from "../neurons";
 
 const useSettings = () => {
-  const [, setPlayerAmount] = useNeuron((state) => state.playerAmount);
-  const [isAnimatedBKEnabled, setIsAnimatedBKEnabled] = useNeuron(
-    (state) => state.isAnimatedBKEnabled
-  );
+  const [, { set: setPlayerAmount }] = usePlayerAmount();
+  const [isAnimatedBKEnabled, { set: setIsAnimatedBKEnabled }] =
+    useIsAnimatedBKEnabled();
 
   const enableAnimatedBK = (isEnabled: boolean) => {
     setIsAnimatedBKEnabled(isEnabled);

@@ -1,14 +1,13 @@
 import React from "react";
-import { useNeuron } from "../Store";
+import { usePlayerData, usePlayerAmount } from "../neurons";
 import { DuelBoard } from "../interfaces";
 
 interface IOptions {
   activePlayerNumber?: number;
 }
 const usePlayer = (options?: IOptions) => {
-  // const [State, Store, Util] = useAppStore();
-  const [playerData, setPlayerData] = useNeuron((state) => state.playerData);
-  const [playerAmount] = useNeuron((state) => state.playerAmount);
+  const [playerData, { set: setPlayerData }] = usePlayerData();
+  const [playerAmount] = usePlayerAmount();
 
   //Active page player (used when on calculator page or player settings)
   const [activePlayer, setActivePlayer] =
@@ -40,7 +39,7 @@ const usePlayer = (options?: IOptions) => {
     const updatedData = playerData?.map((player) => {
       return {
         ...player,
-        prevLifePoints: player?.lifePoints,
+        prevLifePoints: player?.prevLifePoints,
         lifePoints: player?.lifePoints,
       };
     });

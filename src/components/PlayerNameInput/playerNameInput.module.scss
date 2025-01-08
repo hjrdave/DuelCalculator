@@ -5,11 +5,11 @@
 
 .control {
   height: 5.5rem;
-  font-size: 4rem;
+  font-size: 4rem !important;
   background-color: $background-dark;
   border: 3px solid $background;
   font-family: $font-calc;
-  color: #fff;
+  color: #4d4dff !important;
   text-shadow: $font-glow-main;
 
   &:focus {
