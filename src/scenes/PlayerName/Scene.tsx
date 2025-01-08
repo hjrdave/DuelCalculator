@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import PlayerNameInput from "../../components/PlayerNameInput";
 import Animate from "../../components/Animate";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 
 export default function Scene() {
   //duel board default player number params causing issues having to manually set. Need to look into this.

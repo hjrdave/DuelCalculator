@@ -3,7 +3,7 @@ import Content from "../../components/Content";
 import Dice from "../../components/Dice";
 import ConfirmBtns from "../../components/ConfirmBtns";
 import Animate from "../../components/Animate";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 import styles from "./scene.module.scss";
 
 export default function Scene() {

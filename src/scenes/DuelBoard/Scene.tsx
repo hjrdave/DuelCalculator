@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import Content from "../../components/Content";
 import Player from "../../components/Player";
 import UtilityBar from "../../components/UtilityBar";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 
 function Scene() {
   const board = useDuelBoard();

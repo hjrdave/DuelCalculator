@@ -1,7 +1,7 @@
 import Content from "../../components/Content";
 import { useParams } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 import Calculator from "../../components/Calculator";
 import Animate from "../../components/Animate";
 import styles from "./scene.module.scss";

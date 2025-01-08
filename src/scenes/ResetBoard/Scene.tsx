@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import Content from "../../components/Content";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 import ConfirmBtns from "../../components/ConfirmBtns";
 import Animate from "../../components/Animate";
 

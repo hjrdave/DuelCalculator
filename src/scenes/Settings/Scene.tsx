@@ -2,7 +2,7 @@ import Content from "../../components/Content";
 import ConfirmBtns from "../../components/ConfirmBtns";
 import Switch from "../../components/Switch";
 import { Row, Col } from "react-bootstrap";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 
 export default function Scene() {
   const board = useDuelBoard();

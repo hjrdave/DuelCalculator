@@ -1,5 +1,5 @@
 import { Navbar } from "react-bootstrap";
-import useDuelBoard from "../../hooks/use-duelboard";
+import useDuelBoard from "../../hooks/useDuelboard";
 import styles from "./header.module.scss";
 
 export default function Header() {
